@@ -1,12 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ProductProvider } from "./context";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import * as serviceWorker from "./serviceWorker";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap/dist/js/jquery.min.js";
+
+import { RoomProvider } from "./contextrooms";
+
+import { MammalProvider } from "./contextmammals";
+
+import App from "./App";
+
+ReactDOM.render(
+  <ProductProvider>
+    <RoomProvider>
+      <MammalProvider>
+        <Router>
+          <App />
+        </Router>
+      </MammalProvider>
+    </RoomProvider>
+  </ProductProvider>,
+  document.getElementById("root")
+);
 serviceWorker.unregister();
