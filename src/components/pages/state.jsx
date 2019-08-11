@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import ToDoList from "../examples/todolist";
-
-// Import Page Components
 import ChildState from "../examples/childstate";
 import Title from "../modules/title";
 
@@ -124,9 +121,6 @@ class State extends Component {
           </div>
           <hr />
           <ChildState count={this.state.count} />
-          <hr />
-          <h2>To Do List</h2>
-          <ToDoList />
         </div>
       </React.Fragment>
     );

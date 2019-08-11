@@ -219,6 +219,8 @@ export default [
   {
     id: 6,
     featured: true,
+    featuredPhoto: "../assets/images/animals/giraffe.jpg",
+    featuredTitle: "This is tallest of the mammal species.",
     slug: "giraffe",
     title: "Giraffe",
     latin: "Giraffa camelopardalis",
@@ -268,6 +270,8 @@ export default [
   {
     id: 7,
     featured: true,
+    featuredPhoto: "../assets/images/animals/lion.jpg",
+    featuredTitle: "This is the featured title text.",
     slug: "lion",
     title: "Lion",
     latin: "Panthera leo",

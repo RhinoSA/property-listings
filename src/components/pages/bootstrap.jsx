@@ -130,6 +130,8 @@ class Bootstrap extends Component {
 
     return (
       <React.Fragment>
+        <span id="spy-0" className="anchor" />
+
         <Carousel
           carouselID={this.state.carouselID}
           carousel={this.state.carousel}

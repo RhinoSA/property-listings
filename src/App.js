@@ -11,17 +11,19 @@ import Animals from "./components/pages/animals";
 import Basics from "./components/pages/basics";
 import Components from "./components/pages/components";
 import Forms from "./components/pages/forms";
-import Lists from "./components/pages/lists";
+import SearchAnimals from "./components/pages/searchanimals";
 import Links from "./components/pages/links";
 import Bootstrap from "./components/pages/bootstrap";
 import State from "./components/pages/state";
 import Hooks from "./components/pages/hooks";
 import Default from "./components/pages/default";
-import Axios from "./components/pages/axios";
+//import Axios from "./components/pages/axios";
+import ToDo from "./components/pages/todo";
+import JavaScript from "./components/pages/javascript";
 // PROPERTY SEARCH
 import Rooms from "./components/pages/rooms";
 import SingleRoom from "./components/pages/singleroom";
-import Error from "./components/pages/error";
+//import Error from "./components/pages/error";
 // SHOP
 import Shop from "./components/shop";
 import Details from "./components/shop/details";
@@ -31,7 +33,7 @@ import Modal from "./components/shop/modal";
 
 import SingleMammal from "./components/pages/singlemammal";
 
-import AxiosPost from "./components/modules/axiospost";
+//import AxiosPost from "./components/modules/axiospost";
 
 class App extends Component {
   constructor() {
@@ -49,17 +51,20 @@ class App extends Component {
         {/*<Header sitename={this.state.sitename} />*/}
         <main role="main">
           <Switch>
+            <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route path="/animals" component={Animals} />
             <Route path="/bootstrap" component={Bootstrap} />
             <Route path="/basics" component={Basics} />
             <Route path="/components" component={Components} />
             <Route path="/forms" component={Forms} />
-            <Route path="/lists" component={Lists} />
+            <Route path="/search" component={SearchAnimals} />
             <Route path="/links" component={Links} />
             <Route path="/state" component={State} />
             <Route path="/hooks" component={Hooks} />
-            <Route path="/axios" component={Axios} />
+            {/*<Route path="/axios" component={Axios} />*/}
+            <Route path="/todo" component={ToDo} />
+            <Route path="/javascript" component={JavaScript} />
             {/*<Route exact path="/" component={Home} />*/}
             <Route path="/Shop" component={Shop} />
             <Route path="/details" component={Details} />
@@ -70,9 +75,10 @@ class App extends Component {
             <Route exact path="/rooms/" component={Rooms} />
             <Route exact path="/rooms/:slug" component={SingleRoom} />
             <Route exact path="/mammals/:slug" component={SingleMammal} />
-            <Route path="/error" component={Error} />
+            <Route exact path="/order/:slug" component={SingleMammal} />
+            {/*<Route path="/error" component={Error} />*/}
             {/* AXIOS */}
-            <Route exact path="/:post_id" component={AxiosPost} />
+            {/*<Route exact path="/:post_id" component={AxiosPost} />*/}
             {/*<Route component={Default} />*/}
             <Route component={Default} />
           </Switch>

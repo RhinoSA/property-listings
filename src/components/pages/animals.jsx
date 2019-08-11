@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { MammalContext } from "../../contextmammals";
 import Title from "../modules/title";
-//import Loading from "../modules/loading";
 import Animal from "../modules/species/animal";
-// NEW
 import MammalContainer from "../modules/species/mammalcontainer";
 
 export default class Animals extends Component {

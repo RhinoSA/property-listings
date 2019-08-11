@@ -14,7 +14,7 @@ export default function MammalFilter({ mammals }) {
   };
   const context = useContext(MammalContext);
   //console.log(context);
-  const { handleChange, order, family } = context;
+  const { handleChange, order, family, carnivora } = context;
   // Get unique types
   let types = getUnique(mammals, "order");
   // Add all
@@ -76,6 +76,19 @@ export default function MammalFilter({ mammals }) {
           </select>
         </div>
         {/* End Select Family */}
+        <div className="form-group">
+          <input
+            className="form-check-input ml-2"
+            type="checkbox"
+            name="carnivora"
+            id="carnivora"
+            checked={carnivora}
+            onChange={handleChange}
+          />
+          <label htmlFor="featured" className="form-check-label">
+            Carnivora
+          </label>
+        </div>
       </form>
     </section>
   );

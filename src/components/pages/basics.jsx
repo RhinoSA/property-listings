@@ -12,6 +12,8 @@ import Users from "../users/users";
 import Block from "../hoc/block";
 import Photo from "../../images/lion.jpg";
 
+import ApidataNew from "../examples/apidatanew";
+
 import $ from "jquery";
 
 import PropTypes from 'prop-types';
@@ -36,7 +38,6 @@ function HooksExampleTwo() {
         <button className="btn btn-secondary" onClick={() => setCountTwo(countTwo + 1)}>
           Click Me
         </button>
-        
         <button className={countTwo === 0 ? "btn btn-secondary ml-2 disabled" : "btn btn-secondary ml-2"} onClick={() => setCountTwo(0)}>
           Reset
         </button>
@@ -56,7 +57,6 @@ function HooksExample() {
         <button className="btn btn-secondary" onClick={() => setCount(count + 1)}>
           Click Me
         </button>
-        
         <button className={count === 0 ? "btn btn-secondary ml-2 disabled" : "btn btn-secondary ml-2"} onClick={() => setCount(0)}>
           Reset
         </button>
@@ -133,6 +133,16 @@ BlogPostExcerpt.defaultProps = {
 
 
 class Basics extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      names: [{ objectID: 1, name: "Andrew" }, { objectID: 2, name: "Peter" }],
+      searchTerm: ""
+    };
+  }
+
   componentDidMount() {
     // STICKY SCRIPT BELOW HERE
     // =========================
@@ -212,6 +222,38 @@ class Basics extends Component {
             <Title title="Creating an App" />
             <h2>Higher Order Components</h2>
             <Block />
+            <p>The photo featured above is selected randomly from  an array of images. Every time you refresh the page, a new image is chosen from the array. First create a file named "block.js" and use the code below:</p>
+            <p className="alert alert-secondary">import React from 'react';<br />
+import Rainbow from "./rainbow";<br /><br />
+const Block = () => &#123;<br />
+&nbsp;&nbsp;return (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+&#125;<br /><br />
+export default Rainbow(Block);</p>
+<p>This is the code for the file named "rainbow.jsx":</p>
+<p className="alert alert-secondary">import React from 'react';<br /><br />
+const Rainbow = (WrappedComponent) => &#123;<br />
+&nbsp;&nbsp;const images = ['lion','elephant','giraffe','hyaena','cheetah','white-rhino'];<br />
+&nbsp;&nbsp;const randomImage = images[Math.floor(Math.random() * 5)];<br />
+&nbsp;&nbsp;const imageName = '../../../assets/images/animals/' + randomImage + '.jpg';<br /><br />
+&nbsp;&nbsp;return (props) => &#123;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div style=&#123;&#123;padding: "15px 15px 15px 15px", borderRadius: 6, border: "solid 1px #d8d8d8"&#125;&#125;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;WrappedComponent &#123;...props&#125; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&#123;imageName&#125; className="img-fluid" alt=&#123;imageName&#125; /&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+&nbsp;&nbsp;&#125;<br />
+&#125;<br /><br />
+export default Rainbow;</p>
+<p>To call the random photo you would then use this:</p>
+<p className="alert alert-secondary">&lt;Block /&gt;</p>
+<p>And also am import statement must be added:</p>
+<p className="alert alert-secondary">import Block from "../hoc/block";</p>
+
+
             <Users />
             <h2>Loading React Directly</h2>
             <p>
@@ -1188,6 +1230,18 @@ BlogPostExcerpt.defaultProps = &#123;<br />
               </div>
             </div>
             {/* Tabbed Content Ends Here */}
+
+            <h2>Animal List</h2>
+          <p>
+            The example below outputs repeating components and also adds the
+            prices of all the products listed and displays the total cost of the
+            items. It also shows the total number of items in the list of
+            products. The items in the array of products are also sorted
+            alphabetically using the array sort method.
+          </p>
+          <h4>Shopping Cart</h4>
+          <ApidataNew />
+
           </div>
         </div>
       </div>

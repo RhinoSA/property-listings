@@ -24,7 +24,7 @@ class Navbar extends Component {
             {
               id: 0,
               title: "basics",
-              linkURL: "/bootstrap",
+              linkURL: "/bootstrap#spy-0",
               linkType: ""
             },
             {
@@ -120,7 +120,7 @@ class Navbar extends Component {
           ]
         },
         { id: 4, title: "components", linkURL: "/components", linkType: "" },
-        { id: 5, title: "Filtering Lists", linkURL: "/lists", linkType: "" },
+        { id: 5, title: "Search", linkURL: "/search", linkType: "" },
         { id: 6, title: "forms", linkURL: "/forms", linkType: "" },
         { id: 7, title: "State", linkURL: "/state", linkType: "" },
         { id: 8, title: "Hooks", linkURL: "/hooks", linkType: "" },
@@ -128,7 +128,8 @@ class Navbar extends Component {
         { id: 10, title: "Shop", linkURL: "/shop", linkType: "" },
         { id: 11, title: "Cart", linkURL: "/cart", linkType: "" },
         { id: 12, title: "Rooms", linkURL: "/rooms", linkType: "" },
-        { id: 13, title: "Axios", linkURL: "/axios", linkType: "" }
+        { id: 13, title: "ToDo", linkURL: "/todo/todo", linkType: "" },
+        { id: 14, title: "JavaScript", linkURL: "/javascript", linkType: "" }
       ]
     };
   }

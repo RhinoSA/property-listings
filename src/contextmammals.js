@@ -10,7 +10,8 @@ class MammalProvider extends Component {
     featuredAnimals: [],
     order: "all",
     family: "all",
-    loading: true
+    loading: true,
+    carnivora: false
   };
 
   componentDidMount() {
@@ -58,7 +59,7 @@ class MammalProvider extends Component {
   };
 
   filterMammals = () => {
-    let { mammals, order, family } = this.state;
+    let { mammals, order, family, carnivora } = this.state;
     // All the rooms
     let tempMammal = [...mammals];
     // Filter by type
@@ -68,6 +69,10 @@ class MammalProvider extends Component {
     // Filter by type
     if (family !== "all") {
       tempMammal = tempMammal.filter(mammal => mammal.family === family);
+    }
+    // Filter by pets
+    if (carnivora) {
+      tempMammal = tempMammal.filter(mammal => mammal.order === "carnivora");
     }
     // Change State
     this.setState({

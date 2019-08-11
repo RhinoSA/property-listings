@@ -5,6 +5,8 @@ import $ from "jquery";
 import { Link } from "react-router-dom";
 import { MammalContext } from "../../contextmammals";
 import Title from "../modules/title";
+import styled from "styled-components";
+import defaultImg from "../../images/lion.jpg";
 
 class SingleMammal extends Component {
   constructor(props) {
@@ -50,7 +52,7 @@ class SingleMammal extends Component {
       return (
         <div className="error">
           <h4>That animal could not be found...</h4>
-          <Link to="/rooms" className="btn btn-primary">
+          <Link to="/animals" className="btn btn-primary">
             Back to Species
           </Link>
         </div>
@@ -85,7 +87,9 @@ class SingleMammal extends Component {
       teats,
       teeth,
       collective,
-      photos
+      photos,
+      featuredPhoto,
+      featuredTitle
     } = mammal;
 
     const capitalize = s => {
@@ -111,6 +115,19 @@ class SingleMammal extends Component {
       }
     }
 
+    const BackgroundImage = styled.header`
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 700px;
+      width: 100%;
+      background: url(${featuredPhoto ? featuredPhoto : defaultImg})
+        center/cover no-repeat;
+      display: inline-block;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    `;
+
     const collectiveNounBefore = info;
 
     const collectiveNoun = capitalize(collectiveNounBefore);
@@ -119,8 +136,23 @@ class SingleMammal extends Component {
       <React.Fragment>
         <div className="container">
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-12 mb-3">
               <Title title={title} />
+              {featuredPhoto ? (
+                <div className="banner-title">
+                  <div className="title-float">{latin}</div>
+                  {featuredTitle ? (
+                    <div className="featured-title">
+                      <span>{featuredTitle}</span>
+                    </div>
+                  ) : null}
+                  {featuredPhoto ? <BackgroundImage photos={photos} /> : null}
+                </div>
+              ) : null}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-3">
               <p>
                 <b>Latin:</b> {latin}
                 <br />

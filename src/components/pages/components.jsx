@@ -7,29 +7,31 @@ function formatDate(date) {
 
 function Comment(props) {
   return (
-    <div className="row" style={{ padding: 15 }}>
-      <div
-        className="UserInfo col-md-2"
-        style={{
-          backgroundColor: "#6e7f38",
-          padding: 4,
-          borderRadius: 6,
-          overflow: "hidden"
-        }}
-      >
-        <img
-          className="img-fuid"
-          style={{ width: "100%", height: "auto" }}
-          src={props.author.avatarUrl}
-          alt={props.author.name}
-        />
+    <React.Fragment>
+      <div className="row" style={{ padding: 15 }}>
+        <div
+          className="UserInfo col-md-2"
+          style={{
+            backgroundColor: "#6e7f38",
+            padding: 4,
+            borderRadius: 6,
+            overflow: "hidden"
+          }}
+        >
+          <img
+            className="img-fuid"
+            style={{ width: "100%", height: "auto" }}
+            src={props.author.avatarUrl}
+            alt={props.author.name}
+          />
+        </div>
+        <div className="UserInfo col-md-10">
+          <h4 className="UserInfo-name">{props.author.name}</h4>
+          <div className="Comment-text">{props.text}</div>
+          <div className="Comment-date">{formatDate(props.date)}</div>
+        </div>
       </div>
-      <div className="UserInfo col-md-10">
-        <h4 className="UserInfo-name">{props.author.name}</h4>
-        <div className="Comment-text">{props.text}</div>
-        <div className="Comment-date">{formatDate(props.date)}</div>
-      </div>
-    </div>
+    </React.Fragment>
   );
 }
 

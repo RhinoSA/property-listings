@@ -27,13 +27,10 @@ export default function MammalFeatured({ mammal }) {
         </h4>
         <div className="card-text" style={{ padding: "0px 15px 15px 15px" }}>
           <p>
-            Latin Name: {latin}
+            {latin}
             <br />
             Order: {capitalize(order)}
           </p>
-          <Link to={`/mammals/${slug}`} className="btn btn-secondary btn-sm">
-            More Info
-          </Link>
         </div>
       </div>
     </article>
