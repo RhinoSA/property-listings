@@ -137,7 +137,6 @@ export class Editor extends Component {
                 value={this.state.flavor}
                 onChange={this.updateFormValue}
               >
-                <option value="">Choose flavor</option>
                 {this.flavors.map(flavor => (
                   <option value={flavor} key={flavor}>
                     {flavor}
