@@ -136,14 +136,13 @@ class Navbar extends Component {
         { id: 4, title: "components", linkURL: "/components", linkType: "" },
         { id: 5, title: "Search", linkURL: "/search", linkType: "" },
         { id: 6, title: "forms", linkURL: "/forms", linkType: "" },
-        { id: 7, title: "State", linkURL: "/state", linkType: "" },
-        { id: 8, title: "Hooks", linkURL: "/hooks", linkType: "" },
-        { id: 9, title: "Links", linkURL: "/links", linkType: "" },
-        { id: 10, title: "Shop", linkURL: "/shop", linkType: "" },
-        { id: 11, title: "Cart", linkURL: "/cart", linkType: "" },
-        { id: 12, title: "Rooms", linkURL: "/rooms", linkType: "" },
-        { id: 13, title: "ToDo", linkURL: "/todo/todo", linkType: "" },
-        { id: 14, title: "JavaScript", linkURL: "/javascript", linkType: "" }
+        { id: 7, title: "Hooks", linkURL: "/hooks", linkType: "" },
+        { id: 8, title: "Links", linkURL: "/links", linkType: "" },
+        { id: 9, title: "Shop", linkURL: "/shop", linkType: "" },
+        { id: 10, title: "Cart", linkURL: "/cart", linkType: "" },
+        { id: 11, title: "Rooms", linkURL: "/rooms", linkType: "" },
+        { id: 12, title: "ToDo", linkURL: "/todo/todo", linkType: "" },
+        { id: 13, title: "JavaScript", linkURL: "/javascript", linkType: "" }
       ]
     };
   }

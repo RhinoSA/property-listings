@@ -14,7 +14,6 @@ import Forms from "./components/pages/forms";
 import SearchAnimals from "./components/pages/searchanimals";
 import Links from "./components/pages/links";
 import Bootstrap from "./components/pages/bootstrap";
-import State from "./components/pages/state";
 import Hooks from "./components/pages/hooks";
 import Default from "./components/pages/default";
 //import Axios from "./components/pages/axios";
@@ -60,7 +59,6 @@ class App extends Component {
             <Route path="/forms" component={Forms} />
             <Route path="/search" component={SearchAnimals} />
             <Route path="/links" component={Links} />
-            <Route path="/state" component={State} />
             <Route path="/hooks" component={Hooks} />
             {/*<Route path="/axios" component={Axios} />*/}
             <Route path="/todo" component={ToDo} />

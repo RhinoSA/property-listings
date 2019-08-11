@@ -12,7 +12,7 @@ export class Editor extends Component {
       email: "",
       emailConfirm: "",
       flavor: "",
-      toppings: [],
+      toppings: ["Sprinkles"],
       message: "",
       terms: false,
       cones: [],
