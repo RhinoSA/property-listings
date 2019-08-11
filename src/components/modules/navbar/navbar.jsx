@@ -3,6 +3,20 @@ import NavBrand from "./navbrand";
 import NavToggle from "./navtoggle";
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
+import $ from "jquery";
+
+$(document).on(
+  "click",
+  ".navbar-nav>li>a, .navbar-brand, .dropdown-menu>a",
+  function(e) {
+    if (
+      $(e.target).is("a") &&
+      $(e.target).attr("class") !== "nav-link dropdown-toggle"
+    ) {
+      $(".navbar-collapse").collapse("hide");
+    }
+  }
+);
 
 class Navbar extends Component {
   constructor() {
