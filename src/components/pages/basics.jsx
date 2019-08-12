@@ -172,7 +172,7 @@ class Basics extends Component {
     return (
       <div className="container" style={{ marginTop: 0 }}>
         <div className="row" style={{position: "relative"}}>
-          <div className="col-md-3">
+          <div className="col-md-3 floating-menu">
             <div className="wrapper" data-toggle="sticky-onscroll">
             <Title title="Overview" />
             <ol>

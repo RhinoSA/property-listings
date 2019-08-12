@@ -119,10 +119,9 @@ class SingleMammal extends Component {
       position: absolute;
       top: 0;
       left: 0;
-      height: 700px;
-      width: 100%;
-      background: url(${featuredPhoto ? featuredPhoto : defaultImg})
-        center/cover no-repeat;
+      background-image: url(${featuredPhoto ? featuredPhoto : defaultImg});
+      background-size: 100% auto;
+      background-repeat: no-repeat;
       display: inline-block;
       margin-top: 0px;
       margin-bottom: 0px;
@@ -136,23 +135,25 @@ class SingleMammal extends Component {
       <React.Fragment>
         <div className="container">
           <div className="row">
-            <div className="col-md-12 mb-3">
+            <div className="col-md-12">
               <Title title={title} />
               {featuredPhoto ? (
                 <div className="banner-title">
                   <div className="title-float">{latin}</div>
                   {featuredTitle ? (
                     <div className="featured-title">
-                      <span>{featuredTitle}</span>
+                      <div className="description-float">{featuredTitle}</div>
                     </div>
                   ) : null}
-                  {featuredPhoto ? <BackgroundImage photos={photos} /> : null}
+                  {featuredPhoto ? (
+                    <BackgroundImage className="banner-photo" photos={photos} />
+                  ) : null}
                 </div>
               ) : null}
             </div>
           </div>
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-lg-3 col-md-12 col-sm-12 order-lg-1 order-md-2 order-sm-2 order-2">
               <p>
                 <b>Latin:</b> {latin}
                 <br />
@@ -250,11 +251,11 @@ class SingleMammal extends Component {
                 {collective.length === 1 ? <b>Collective Noun:</b> : null}
                 {collectiveNoun ? ` ${collectiveNoun}` : null}
               </p>
-              <Link to="/animals" className="btn btn-secondary btn-sm">
+              <Link to="/animals" className="btn btn-secondary">
                 Browse Animals
               </Link>
             </div>
-            <div className="col-md-9">
+            <div className="col-lg-9 col-md-12 col-sm-12 order-lg-2 order-md-1 order-sm-1 order-1">
               {photos.length === 0 ? (
                 <p
                   className="alert alert-secondary"
@@ -266,7 +267,7 @@ class SingleMammal extends Component {
                 <div list={photos}>
                   <div
                     id="animal-carousel"
-                    className="carousel slide carousel-fade"
+                    className="carousel-medium carousel slide carousel-fade"
                     data-ride="carousel"
                   >
                     <div className="carousel-inner">
@@ -280,7 +281,7 @@ class SingleMammal extends Component {
                           key={rows.id}
                         >
                           <img
-                            className="img-fluid"
+                            className="img-carousel"
                             src={rows.imgURL}
                             alt={rows.title}
                           />

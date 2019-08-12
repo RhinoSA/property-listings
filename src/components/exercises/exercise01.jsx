@@ -33,6 +33,7 @@ import ListsProState from "./includes/listsprostate";
 import ListsProContext from "./includes/listsprocontext";
 import ConsumeContext from "./includes/consumecontext";
 import StateChild from "./includes/statechild";
+import CommaList from "./includes/commalist";
 
 // REDUX EXAMPLE
 import { Provider } from "react-redux";
@@ -100,6 +101,7 @@ class Exercise01 extends Component {
     return (
       <div className="row">
         <div className="col-md-12">
+          <CommaList />
           <StateChild />
           <h2>Using URL Routing</h2>
           <Provider store={dataStore}>
