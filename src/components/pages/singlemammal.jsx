@@ -32,7 +32,7 @@ class SingleMammal extends Component {
           role="button"
           data-slide="next"
         >
-          <span className="arrow-acrousel">&gt;</span>
+          <span className="arrow-carousel">&gt;</span>
         </a>
         <a
           className="carousel-control-prev"
@@ -40,7 +40,7 @@ class SingleMammal extends Component {
           role="button"
           data-slide="prev"
         >
-          <span className="arrow-acrousel">&lt;</span>
+          <span className="arrow-carousel">&lt;</span>
         </a>
       </React.Fragment>
     );
@@ -123,6 +123,8 @@ class SingleMammal extends Component {
       background-size: 100% auto;
       background-repeat: no-repeat;
       display: inline-block;
+      width: 100%;
+      height: 100%;
       margin-top: 0px;
       margin-bottom: 0px;
     `;

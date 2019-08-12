@@ -19,11 +19,11 @@ export class Display extends Component {
       );
     } else {
       return (
-        <div className="container-fluid bg-secondary p-3">
+        <div className="bg-secondary p-3">
           {keys.map(key => (
             <div key={key} className="row h5 text-white">
-              <div className="col">{capitalize(key)}:</div>
-              <div className="col">
+              <div className="col-md-4">{capitalize(key)}:</div>
+              <div className="col-md-8">
                 {this.formatValue(this.props.data[key]) === "true"
                   ? "Yes"
                   : this.formatValue(this.props.data[key]) === "false"

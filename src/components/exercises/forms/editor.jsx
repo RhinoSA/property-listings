@@ -80,14 +80,14 @@ export class Editor extends Component {
 
   render() {
     return (
-      <div className="h5 bg-info text-white p-3">
-        <form onSubmit={this.handleFormSubmit} action="/forms">
-          <FormValidator
-            data={this.state}
-            rules={this.rules}
-            submit={this.props.submit}
-            validateForm={ValidateForm}
-          >
+      <div className="h5 bg-light p-3">
+        <FormValidator
+          data={this.state}
+          rules={this.rules}
+          submit={this.props.submit}
+          validateForm={ValidateForm}
+        >
+          <form onSubmit={this.handleFormSubmit} action="/forms">
             <ValidationMessage field="form" />
             <div className="form-group">
               <label>Name</label>
@@ -218,8 +218,8 @@ export class Editor extends Component {
               </div>
               <ValidationMessage field="terms" />
             </div>
-          </FormValidator>
-        </form>
+          </form>
+        </FormValidator>
       </div>
     );
   }

@@ -18,30 +18,3 @@ function RoomContainer({ context }) {
 }
 
 export default withRoomConsumer(RoomContainer);
-
-/*
-import React from "react";
-import RoomFilter from "./roomfilter";
-import RoomList from "./roomlist";
-import { RoomConsumer } from "../../contextrooms";
-import Loading from "../modules/loading";
-
-export default function RoomContainer() {
-  return (
-    <RoomConsumer>
-      {value => {
-        const { loading, sortedRooms, rooms } = value;
-        if (loading) {
-          return <Loading />;
-        }
-        return (
-          <div>
-            <RoomFilter rooms={rooms} />
-            <RoomList rooms={sortedRooms} />
-          </div>
-        );
-      }}
-    </RoomConsumer>
-  );
-}
-*/

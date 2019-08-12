@@ -131,7 +131,6 @@ const Hooks = () => {
         </span>
       </h5>
       {/* END EXPENSE LIST */}
-      <hr />
     </div>
   );
 };

@@ -11,8 +11,8 @@ export class DirectionDisplay extends Component {
 
   getClasses() {
     return (
-      (this.state.direction === "up" ? "bg-secondary" : "bg-danger") +
-      " text-white text-center p-2"
+      (this.state.direction === "up" ? "alert-info" : "alert-primary") +
+      " text-center alert"
     );
   }
 

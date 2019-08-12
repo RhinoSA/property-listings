@@ -17,7 +17,7 @@ const ExpenseItem = ({ expense, handleEdit, handleDelete }) => {
             <MdEdit />
           </button>
           <button
-            className="clear-btn btn btn-danger btn-sm mt-2"
+            className="clear-btn btn btn-primary btn-sm mt-2"
             aria-label="delete button"
             onClick={() => handleDelete(id)}
           >

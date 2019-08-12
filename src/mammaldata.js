@@ -38,13 +38,6 @@ export default [
         description: "",
         imgURL: "../assets/images/animals/wild-dog.jpg",
         active: true
-      },
-      {
-        id: 2,
-        title: "Wild Dog",
-        description: "",
-        imgURL: "../assets/images/animals/wild-dog.jpg",
-        active: false
       }
     ]
   },

@@ -14,7 +14,7 @@ export default function Row(props) {
           Reverse
         </button>
         <button
-          className="btn btn-secondary btn-sm ml-2"
+          className="btn btn-primary btn-sm ml-2"
           onClick={() => props.promoteCallback(props.name)}
         >
           Promote

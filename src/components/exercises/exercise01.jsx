@@ -2242,13 +2242,13 @@ class Exercise01 extends Component {
           <DirectionDisplay value={this.state.counter} />
           <div className="text-center">
             <button
-              className="btn btn-secondary m-1"
+              className="btn btn-primary m-1"
               onClick={() => this.changeCounter(-1)}
             >
               Decrease
             </button>
             <button
-              className="btn btn-secondary m-1"
+              className="btn btn-info m-1"
               onClick={() => this.changeCounter(1)}
             >
               Increase
