@@ -141,7 +141,6 @@ class Bootstrap extends Component {
         <Clock />
         <div
           className="container"
-          style={{ marginTop: 15 }}
           data-spy="scroll"
           data-target="#spymenu"
           data-offset="0"
@@ -151,7 +150,7 @@ class Bootstrap extends Component {
           {/* ########## START ROW ########## */}
           <div className="row">
             <div className="col-md-12">
-              <h1>Bootstrap Modules</h1>
+              <h1 style={{ marginTop: 20 }}>Bootstrap Modules</h1>
               <p>
                 Below are various Bootstrap components one can use to create the
                 elements one would need for a website. There is a button on the

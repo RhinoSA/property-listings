@@ -56,7 +56,7 @@ class Components extends Component {
     const title = "Using Components";
     return (
       <React.Fragment>
-        <div className="container" style={{ marginTop: 0 }}>
+        <div className="container">
           <Title title={title} />
           <p>
             One has two main types of components, functional components and

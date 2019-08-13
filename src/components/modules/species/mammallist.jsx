@@ -2,7 +2,6 @@ import React from "react";
 import Mammal from "./mammal";
 
 export default function MammalList({ mammals }) {
-  
   if (mammals.length === 0) {
     return (
       <div>
@@ -15,7 +14,7 @@ export default function MammalList({ mammals }) {
 
   return (
     <section>
-      <div className="mb-3">
+      <div>
         {mammals.map(item => {
           return <Mammal key={item.id} mammal={item} />;
         })}

@@ -3,6 +3,7 @@ import { TodoBanner } from "./todobanner";
 import { TodoCreator } from "./todocreator";
 import { TodoRow } from "./todorow";
 import { VisibilityControl } from "./visibilitycontrol";
+import Title from "../../modules/title";
 
 export default class ToDo extends Component {
   constructor(props) {
@@ -90,6 +91,7 @@ export default class ToDo extends Component {
 
   render = () => (
     <div className="container">
+      <Title title="Todo List" />
       <TodoBanner name={this.state.userName} tasks={this.state.todoItems} />
       <div>
         <TodoCreator

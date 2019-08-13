@@ -12,15 +12,13 @@ class Rooms extends Component {
   render() {
     return (
       <React.Fragment>
-        <div style={{ marginTop: 0 }}>
-          <Hero hero="roomsHero">
-            <Banner title="Our Rooms">
-              <Link to="/home" className="btn btn-primary">
-                Return Home
-              </Link>
-            </Banner>
-          </Hero>
-        </div>
+        <Hero hero="roomsHero">
+          <Banner title="Our Rooms">
+            <Link to="/home" className="btn btn-primary">
+              Return Home
+            </Link>
+          </Banner>
+        </Hero>
         <RoomContainer />
       </React.Fragment>
     );

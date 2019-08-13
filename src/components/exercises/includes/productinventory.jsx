@@ -56,7 +56,10 @@ class Exercise01 extends Component {
       .filter(item => item.stock > 0)
       .reduce((prev, item) => prev + item.price * item.stock, 0);
     return (
-      <p className="alert alert-secondary text-right">
+      <p
+        className="alert alert-secondary text-right"
+        style={{ paddingRight: 10 }}
+      >
         Total value of stock for{" "}
         {this.state.products.filter(item => item.stock > 0).length} products: $
         {totalValue.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}

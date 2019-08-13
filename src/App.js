@@ -49,6 +49,7 @@ class App extends Component {
         <Header />
         {/*<Header sitename={this.state.sitename} />*/}
         <main role="main">
+          <div className="page-frame" />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />

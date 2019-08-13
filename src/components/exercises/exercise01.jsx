@@ -3343,7 +3343,6 @@ class Exercise01 extends Component {
           <ConsumeContext />
           <h2>Context Example</h2>
           <ListsProContext />
-          <h2>Using Refs &amp; Portals</h2>
         </div>
       </div>
     );

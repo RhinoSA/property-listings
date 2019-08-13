@@ -151,7 +151,7 @@ class Navbar extends Component {
     //title = this.state.navLinks.title;
     //const nameCapitalized = title.charAt(0).toUpperCase() + title.slice(1);
     return (
-      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-3">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <NavBrand
           navBrandLink={this.state.navBrandLink}
           navBrandTitle={this.state.navBrandTitle}
