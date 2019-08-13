@@ -14,6 +14,8 @@
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
+    "react-modal": "^3.9.1",
+    "react-overlay": "^0.1.7",
     "react-paypal-express-checkout": "^1.0.5",
     "react-redux": "^6.0.0",
     "react-router": "^5.0.1",
