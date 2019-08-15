@@ -28,9 +28,8 @@ class Navbar extends Component {
       navLinks: [
         //{ id: 1, title: "home", linkURL: "/home", linkType: "" },
         { id: 1, title: "animals", linkURL: "/animals", linkType: "" },
-        { id: 2, title: "basics", linkURL: "/basics", linkType: "" },
         {
-          id: 3,
+          id: 2,
           title: "bootstrap",
           linkURL: "/bootstrap",
           linkType: "sub",
@@ -133,16 +132,14 @@ class Navbar extends Component {
             }
           ]
         },
-        { id: 4, title: "components", linkURL: "/components", linkType: "" },
-        { id: 5, title: "Search", linkURL: "/search", linkType: "" },
-        { id: 6, title: "forms", linkURL: "/forms", linkType: "" },
-        { id: 7, title: "Hooks", linkURL: "/hooks", linkType: "" },
-        { id: 8, title: "Links", linkURL: "/links", linkType: "" },
-        { id: 9, title: "Shop", linkURL: "/shop", linkType: "" },
-        { id: 10, title: "Cart", linkURL: "/cart", linkType: "" },
-        { id: 11, title: "Rooms", linkURL: "/rooms", linkType: "" },
-        { id: 12, title: "ToDo", linkURL: "/todo/todo", linkType: "" },
-        { id: 13, title: "JavaScript", linkURL: "/javascript", linkType: "" }
+        { id: 3, title: "Search", linkURL: "/search", linkType: "" },
+        { id: 4, title: "forms", linkURL: "/forms", linkType: "" },
+        { id: 5, title: "Links", linkURL: "/links", linkType: "" },
+        { id: 6, title: "Shop", linkURL: "/shop", linkType: "" },
+        { id: 7, title: "Cart", linkURL: "/cart", linkType: "" },
+        { id: 8, title: "Rooms", linkURL: "/rooms", linkType: "" },
+        { id: 9, title: "ToDo", linkURL: "/todo/todo", linkType: "" },
+        { id: 10, title: "JavaScript", linkURL: "/javascript", linkType: "" }
       ]
     };
   }

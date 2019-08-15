@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Modals from "./modals";
 
 class ModalsSection extends Component {
   render() {
@@ -73,7 +72,6 @@ class ModalsSection extends Component {
             of the modal, either top, centered or scrollable. To include a
             footer on the modal, set the "modalFooter" value to true.
           </p>
-          <Modals />
           <p>
             For more information you can view the{" "}
             <a

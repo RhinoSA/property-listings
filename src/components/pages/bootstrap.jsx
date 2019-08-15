@@ -23,6 +23,42 @@ import NavbarsSection from "../sections/navbarssection";
 import PaginationSection from "../sections/paginationsection";
 import ScrollspySection from "../sections/scrollspysection";
 import TabsSection from "../sections/tabssection";
+import Modal from "../modules/modal";
+
+const modalContent = (
+  <React.Fragment>
+    Pellentesque eu quam consequat, hendrerit arcu vel, vestibulum ante. Fusce
+    interdum non mi et tempor. Suspendisse eros nisi, dapibus ac egestas ut,
+    vulputate ac mi. Nullam mauris sem, maximus a mollis eu, ornare ac mi.
+    Curabitur in viverra mauris. Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. In dolor turpis, dignissim ac elit in, iaculis porttitor
+    magna.
+    <br />
+    <br />
+    Integer porta, purus vel laoreet vulputate, quam ipsum iaculis leo, non
+    gravida magna diam vitae nisi. Pellentesque habitant morbi tristique
+    senectus et netus et malesuada fames ac turpis egestas.
+  </React.Fragment>
+);
+
+const modalContentTwo = (
+  <React.Fragment>
+    Integer porta, purus vel laoreet vulputate, quam ipsum iaculis leo, non
+    gravida magna diam vitae nisi. Pellentesque habitant morbi tristique
+    senectus et netus et malesuada fames ac turpis egestas. Etiam egestas
+    suscipit efficitur. Cras in mauris velit. Pellentesque eu quam consequat,
+    hendrerit arcu vel, vestibulum ante. Fusce interdum non mi et tempor.
+    Suspendisse eros nisi, dapibus ac egestas ut, vulputate ac mi. Nullam mauris
+    sem, maximus a mollis eu, ornare ac mi.
+    <br />
+    <br />
+    Curabitur in viverra mauris. Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. In dolor turpis, dignissim ac elit in, iaculis porttitor
+    magna. Integer porta, purus vel laoreet vulputate, quam ipsum iaculis leo,
+    non gravida magna diam vitae nisi. Pellentesque habitant morbi tristique
+    senectus et netus et malesuada fames ac turpis egestas.
+  </React.Fragment>
+);
 
 // Function to determine if it is morning,
 // afternoon or evening
@@ -69,7 +105,21 @@ class Bootstrap extends Component {
           caption: "It can display different images on different pages"
         }
       ],
-      interval: 2
+      interval: 2,
+      // Modal One
+      modalID: "one",
+      modalCall: "#one",
+      modalTitle: "Modal Title One",
+      modalContent: modalContentTwo,
+      modalClass: "centered",
+      modalFooter: false,
+      // Modal Two
+      modalID2: "two",
+      modalCall2: "#two",
+      modalTitle2: "Modal Title Two",
+      modalContent2: modalContent,
+      modalClass2: "scrollable",
+      modalFooter2: true
     };
   }
 
@@ -130,6 +180,20 @@ class Bootstrap extends Component {
 
     return (
       <React.Fragment>
+        <Modal
+          modalID={this.state.modalID}
+          modalTitle={this.state.modalTitle}
+          modalContent={this.state.modalContent}
+          modalClass={this.state.modalClass}
+          modalFooter={this.state.modalFooter}
+        />
+        <Modal
+          modalID={this.state.modalID2}
+          modalTitle={this.state.modalTitle2}
+          modalContent={this.state.modalContent2}
+          modalClass={this.state.modalClass2}
+          modalFooter={this.state.modalFooter2}
+        />
         <span id="spy-0" className="anchor" />
 
         <Carousel
@@ -164,6 +228,47 @@ class Bootstrap extends Component {
                 <li>Pagination</li>
               </ol>
               <hr />
+              <h4>Primary Colours</h4>
+              <p>
+                <button className="btn btn-primary">Primary</button>&nbsp;&nbsp;
+                <button className="btn btn-primary active">Primary</button>
+                &nbsp;&nbsp;
+                <button className="btn btn-primary" disabled>
+                  Primary
+                </button>
+              </p>
+              <p className="alert alert-primary">This is an alert.</p>
+              <h4>Secondary Colours</h4>
+              <p>
+                <button className="btn btn-secondary">Secondary</button>
+                &nbsp;&nbsp;
+                <button className="btn btn-secondary active">Secondary</button>
+                &nbsp;&nbsp;
+                <button className="btn btn-secondary" disabled>
+                  Secondary
+                </button>
+              </p>
+              <p className="alert alert-secondary">This is an alert.</p>
+              <h4>Info Colours</h4>
+              <p>
+                <button className="btn btn-info">Info</button>&nbsp;&nbsp;
+                <button className="btn btn-info active">Info</button>
+                &nbsp;&nbsp;
+                <button className="btn btn-info" disabled>
+                  Info
+                </button>
+              </p>
+              <p className="alert alert-info">This is an alert.</p>
+              <h4>Warning Colours</h4>
+              <p>
+                <button className="btn btn-warning">Warning</button>&nbsp;&nbsp;
+                <button className="btn btn-warning active">Warning</button>
+                &nbsp;&nbsp;
+                <button className="btn btn-warning" disabled>
+                  Warning
+                </button>
+              </p>
+              <p className="alert alert-warning">This is an alert.</p>
               <h2>Installing Bootstrap</h2>
               <p>To install Bootstrap run the following command in Terminal:</p>
               <p className="alert alert-secondary">npm install bootstrap</p>
@@ -199,6 +304,26 @@ class Bootstrap extends Component {
               <ListGroupsSection />
               <hr />
               <ModalsSection />
+              <p>
+                <button
+                  type="button"
+                  id="btnone"
+                  className="btn btn-secondary btn-sm"
+                  data-toggle="modal"
+                  data-target={this.state.modalCall}
+                >
+                  Modal One
+                </button>
+
+                <button
+                  type="button"
+                  className="btn btn-secondary btn-sm ml-2"
+                  data-toggle="modal"
+                  data-target={this.state.modalCall2}
+                >
+                  Modal Two
+                </button>
+              </p>
               <hr />
               <NavbarsSection />
               <hr />

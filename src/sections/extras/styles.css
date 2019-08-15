@@ -1,0 +1,66 @@
+/* ##### CSS SHOW MESSAGE ##### */
+
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.1, 0.1);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.1, 0.1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* ##### CSS SWITCH ##### */
+
+.wrapper {
+  display: inline-block;
+  width: 250px;
+  height: auto;
+  transition: margin 0.5s;
+  margin: 0 0 0 -265px;
+  background-color: #e9e9e9;
+}
+
+.wrapper.is-nav-open {
+  margin-left: 0;
+}
+
+.nav {
+  position: relative;
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+}
+
+.nav__icon {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  right: -45px;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  background-color: #333;
+  border-radius: 6px;
+}
+
+.nav__icon:hover {
+  background-color: #8d8d8d;
+}
+
+.card-custom {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background-color: #fff;
+}
