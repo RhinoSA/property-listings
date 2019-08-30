@@ -1,5 +1,5 @@
 :root {
-  --motionPath: "M0.218,193.25c0,0,92.134,18.38,184.224,33.458 C307.609,246.875,471.502,262.5,612.09,262.5c140.913,0,508.91,0,508.91,0";
+  --motionPath: "M0,163.594c0,0,249.176,0.927,413,17.406 c169,17,273.782,36.555,371.586,41.091C912,228,1398,238,1398,238";
   --timingCurve: 0.1, 0.29, 0.61, 1;
   --animationDuration: 4s;
   --animationDelay: 3s;
@@ -20,7 +20,7 @@
   height: 450px;
   display: inline-block;
   position: absolute;
-  left: -50px;
+  left: 0px;
   z-index: 50;
   animation-name: blipLighten;
   animation-delay: var(--animationDelay);
@@ -78,7 +78,8 @@
   offset-path: path(var(--motionPath));
   offset-rotate: auto;
   z-index: 100;
-  top: -50px;
+  top: -20px;
+  left: -50px;
 }
 
 @keyframes blipBlueMove {
@@ -115,18 +116,17 @@
 
 @keyframes blipBlueShadowMove {
   0% {
-    opacity: 0.4;
-    left: -150px;
-    top: -10px;
+    opacity: 1;
+    left: -120px;
     width: 80px;
     motion-offset: 0;
     offset-distance: 0%;
     transform: rotate(-10deg);
   }
   100% {
-    opacity: 0.6;
-    left: -210px;
-    top: -25px;
+    opacity: 1;
+    left: -260px;
+    top: 30px;
     width: 180px;
     motion-offset: 100%;
     offset-distance: 100%;
@@ -396,170 +396,6 @@
   to {
     opacity: 1;
   }
-}
-
-.blippy-wrap {
-  height: 470px;
-  padding: 0px;
-  margin-bottom: 15px;
-  margin-top: 15px;
-  display: inline-block;
-  width: 100%;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  animation: animateBackground 6s forwards ease-in;
-  animation-iteration-count: 1;
-  animation-delay: 0s;
-  animation-fill-mode: both;
-}
-
-@keyframes animateBackground {
-  0% {
-    background-color: rgb(40, 100, 156);
-  }
-  70% {
-    background-color: rgb(40, 100, 156);
-  }
-  80% {
-    background-color: rgb(127, 170, 211);
-  }
-  100% {
-    background-color: rgb(40, 100, 156);
-  }
-}
-
-.blip-outer {
-  position: absolute;
-  z-index: 50;
-  display: inline-block;
-  width: 200px;
-  animation: blipAppear 4s infinite forwards linear;
-  animation-delay: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
-}
-
-@keyframes blipAppear {
-  0% {
-    opacity: 0;
-    transform: scale(0.4);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-}
-
-.blippy.colour {
-  position: absolute;
-  width: 100%;
-  margin: 17px 20px 10px 30px;
-  cursor: pointer;
-  animation: blipMove 12s forwards linear;
-  animation-delay: 2s;
-  animation-iteration-count: 1;
-}
-
-@keyframes blipMove {
-  0% {
-    top: 320px;
-    left: -300px;
-    transform: rotate(-5deg);
-  }
-  50% {
-    left: 2400px;
-    top: -530px;
-    transform: rotate(5deg);
-  }
-  100% {
-    left: 2000px;
-    top: -400px;
-    transform: rotate(-10deg);
-  }
-}
-
-.blippy.colour {
-  z-index: 10;
-}
-
-.blippy.gray .blip-white-back {
-  fill: rgb(123, 143, 53);
-}
-
-.blippy.colour .blip-white-back {
-  fill: #ffffff;
-}
-
-.blippy .blip-body {
-  /* display: none; */
-  opacity: 1;
-  -webkit-transition: opacity 2s;
-  transition: opacity 2s;
-}
-
-.blippy .blip-black {
-  fill: #000;
-}
-
-.blippy .blip-outline {
-  fill: #fff;
-}
-
-.blip-star {
-  fill: #fff;
-}
-
-.blip-brass-01 {
-  fill: #ad9168;
-}
-
-.blip-brass-02 {
-  fill: #a18658;
-}
-
-.blip-brass-03 {
-  fill: #7f6845;
-}
-
-.blip-brass-04 {
-  fill: #bba176;
-}
-
-.blip-brass-05 {
-  fill: red;
-}
-
-.blip-brass-06 {
-  fill: #e4d1a7;
-}
-
-.blip-brass-07 {
-  fill: #231f20;
-}
-
-.blip-green-01 {
-  fill: #758f35;
-}
-
-.blip-green-02 {
-  fill: #9bb250;
-}
-
-.blip-green-03 {
-  fill: #c9da91;
-}
-
-.blip-green-04 {
-  fill: #b4ce5f;
-}
-
-.blip-green-05 {
-  fill: #6a7c5f;
 }
 
 /*
