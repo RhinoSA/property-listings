@@ -34,11 +34,7 @@ class Home extends Component {
         <Navbar />
         <div className="container">
           <div className="row">
-            {/*<div className="col-md-3">
-              <Menu />
-    </div>*/}
             <div className="col-md-12">
-              <h1>React Basics</h1>
               <div className="blip-draw-stage">
                 <div className="blip-blue-wrapper">
                   <BlueBlip />
@@ -64,6 +60,14 @@ class Home extends Component {
                   <CogBlue08 />
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-3">
+              <Menu />
+            </div>
+            <div className="col-md-9">
+              <h1>React Basics</h1>
               <h2>To Refine</h2>
               <ol>
                 <li>Higher-Order Components</li>
