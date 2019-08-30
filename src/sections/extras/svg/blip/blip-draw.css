@@ -968,6 +968,7 @@
   height: 450px;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .blip-blue-wrap {

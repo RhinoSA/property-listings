@@ -18,7 +18,6 @@ import CogBlue06 from "../../sections/extras/svg/blip/cog-blue-06";
 import CogBlue07 from "../../sections/extras/svg/blip/cog-blue-07";
 import CogBlue08 from "../../sections/extras/svg/blip/cog-blue-08";
 import BlipDraw from "../../sections/extras/svg/blip/blip-draw";
-import BlipLogo from "../../sections/extras/springs/blip.svg";
 import LetterB from "../../sections/extras/svg/blip/letterB";
 import LetterL from "../../sections/extras/svg/blip/letterL";
 import LetterI from "../../sections/extras/svg/blip/letterI";
@@ -35,10 +34,10 @@ class Home extends Component {
         <Navbar />
         <div className="container">
           <div className="row">
-            <div className="col-md-3">
+            {/*<div className="col-md-3">
               <Menu />
-            </div>
-            <div className="col-md-9">
+    </div>*/}
+            <div className="col-md-12">
               <h1>React Basics</h1>
               <div className="blip-draw-stage">
                 <div className="blip-blue-wrapper">
