@@ -4,6 +4,26 @@ import Menu from "../../sections/menu";
 import FeaturedRooms from "./featuredrooms";
 import Photo from "../../images/lion.jpg";
 
+/* ########## BLIP ########## */
+import "../../sections/extras/svg/blip/blip.css";
+import "../../sections/extras/springs/blipper.css";
+import BlueBlip from "../../sections/extras/svg/blip/blipblue";
+import BlueShadow from "../../sections/extras/svg/blip/blueshadow";
+import CogBlue01 from "../../sections/extras/svg/blip/cog-blue-01";
+import CogBlue02 from "../../sections/extras/svg/blip/cog-blue-02";
+import CogBlue03 from "../../sections/extras/svg/blip/cog-blue-03";
+import CogBlue04 from "../../sections/extras/svg/blip/cog-blue-04";
+import CogBlue05 from "../../sections/extras/svg/blip/cog-blue-05";
+import CogBlue06 from "../../sections/extras/svg/blip/cog-blue-06";
+import CogBlue07 from "../../sections/extras/svg/blip/cog-blue-07";
+import CogBlue08 from "../../sections/extras/svg/blip/cog-blue-08";
+import BlipDraw from "../../sections/extras/svg/blip/blip-draw";
+import BlipLogo from "../../sections/extras/springs/blip.svg";
+import LetterB from "../../sections/extras/svg/blip/letterB";
+import LetterL from "../../sections/extras/svg/blip/letterL";
+import LetterI from "../../sections/extras/svg/blip/letterI";
+import LetterP from "../../sections/extras/svg/blip/letterP";
+
 class Home extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -20,6 +40,31 @@ class Home extends Component {
             </div>
             <div className="col-md-9">
               <h1>React Basics</h1>
+              <div className="blip-draw-stage">
+                <div className="blip-blue-wrapper">
+                  <BlueBlip />
+                  <BlueShadow />
+                </div>
+                <div className="blip-blue-text">
+                  <LetterB />
+                  <LetterL />
+                  <LetterI />
+                  <LetterP />
+                </div>
+                <div className="blip-blue-wrap">
+                  <BlipDraw />
+                </div>
+                <div className="cogs">
+                  <CogBlue01 />
+                  <CogBlue02 />
+                  <CogBlue03 />
+                  <CogBlue04 />
+                  <CogBlue05 />
+                  <CogBlue06 />
+                  <CogBlue07 />
+                  <CogBlue08 />
+                </div>
+              </div>
               <h2>To Refine</h2>
               <ol>
                 <li>Higher-Order Components</li>
