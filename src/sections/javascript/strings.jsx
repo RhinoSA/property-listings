@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Menu from "../menu";
+import { capitalize, uppercase, lowercase, trim, replace } from "./capitalize";
 
 class Strings extends Component {
   state = {};
@@ -108,6 +109,131 @@ class Strings extends Component {
               let result = Number(firstval) + Number(secondval);
               <br />
               console.log(result)
+            </p>
+            <h2>Manipulating Strings</h2>
+            <h4>Capitalizing a String</h4>
+            <p>
+              Create a function to capitalize a word use the following script,
+              which in this case is in a separate file named capitalize.jsx:
+            </p>
+            <p className="alert alert-secondary">
+              export const capitalize = s =&gt; &#123;
+              <br />
+              &nbsp;&nbsp;if (typeof s !== "string") return "";
+              <br />
+              &nbsp;&nbsp;return s.charAt(0).toUpperCase() + s.slice(1);
+              <br />
+              &#125;;
+            </p>
+            <p>
+              To use the function, one needs to import the function into the
+              component that will use it as follows:
+            </p>
+            <p className="alert alert-secondary">
+              import &#123; capitalize &#125; from "./capitalize";
+            </p>
+            <p>Then to capitalize a word use the following:</p>
+            <p className="alert alert-secondary">
+              &#123;capitalize("capitalized")&#125;
+            </p>
+            <p>
+              <b>The Output:</b>&nbsp;{capitalize("capitalized")}
+            </p>
+            <h4>Uppercasing a String:</h4>
+            <p>This is a function which can be used to uppercase a string:</p>
+            <p className="alert alert-secondary">
+              export const uppercase = a =&gt; &#123;
+              <br />
+              &nbsp;&nbsp;if (typeof a !== "string") return "";
+              <br />
+              &nbsp;&nbsp;return a.toUpperCase();
+              <br />
+              &#125;;
+            </p>
+            <p>
+              Then to convert a string to uppercase letters, use the following:
+            </p>
+            <p className="alert alert-secondary">
+              &#123;uppercase("capitalized")&#125;
+            </p>
+            <p>
+              <b>The Output:</b>&nbsp;{uppercase("capitalized")}
+            </p>
+            <h4>Lowercasing a String</h4>
+            <p>This is a function that converts a string to lowercase:</p>
+            <p className="alert alert-secondary">
+              export const lowercase = a =&gt; &#123;
+              <br />
+              &nbsp;&nbsp;if (typeof a !== "string") return "";
+              <br />
+              &nbsp;&nbsp;return a.toLowerCase();
+              <br />
+              &#125;;
+            </p>
+            <p>
+              Then to convert a string to lowercase letters, use the following:
+            </p>
+            <p className="alert alert-secondary">
+              &#123;lowercase("capitalized")&#125;
+            </p>
+            <p>
+              <b>The Output:</b>&nbsp;{lowercase("CapiTalized")}
+            </p>
+            <h4>Cleaning White Spaces:</h4>
+            <p>
+              If a string contains unwanted spaces between words, one can use
+              the trim function to get rid of the extra white space as follows:
+            </p>
+            <p className="alert alert-secondary">
+              export const trim = a =&gt; &#123;
+              <br />
+              &nbsp;&nbsp;if (typeof a !== "string") return "";
+              <br />
+              &nbsp;&nbsp;return a.trim();
+              <br />
+              &#125;;
+            </p>
+            <p>To use the function, one would use the following:</p>
+            <p className="alert alert-secondary">
+              &#123;trim("This is&nbsp;&nbsp;a
+              sentence&nbsp;&nbsp;with&nbsp;&nbsp;&nbsp;&nbsp;too many
+              spaces.")&#125;
+            </p>
+            <p>{trim("This is  a sentence  with  too many spaces.")}</p>
+            <h4>Replacing Words in a String:</h4>
+            <p>
+              The function below can be used to replace certain words or
+              characters in a string with different values:
+            </p>
+            <p className="alert alert-secondary">
+              export const replace = (a, b, c) => &#123;
+              <br />
+              &nbsp;&nbsp;let sentence = c;
+              <br />
+              &nbsp;&nbsp;if (typeof (a, b, c) !== "string") return "";
+              <br />
+              &nbsp;&nbsp;return sentence.replace(a, b);
+              <br />
+              &#125;;
+            </p>
+            <p>This is how one would use the function:</p>
+            <p className="alert alert-secondary">
+              &#123;replace(
+              <br />
+              &nbsp;&nbsp;"sentence",
+              <br />
+              &nbsp;&nbsp;"string of words",
+              <br />
+              &nbsp;&nbsp;"This is a sentence with too many spaces."
+              <br />
+              )&#125;
+            </p>
+            <p>
+              {replace(
+                "sentence",
+                "string of words",
+                "This is  a sentence  with  too many spaces."
+              )}
             </p>
           </div>
         </div>

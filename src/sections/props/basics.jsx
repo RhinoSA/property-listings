@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Menu from "../menu";
+import StateChild from "./statechild";
 
 function Person(props) {
   return (
     <div className="card mt-3">
-      <p className="card-body" style={{ paddingBottom: 0 }}>
+      <p className="card-body mb-2">
         Name: {props.name}
         <br />
         Age: {props.age}
@@ -29,7 +30,9 @@ class PropsBasics extends Component {
             <Menu />
           </div>
           <div className="col-md-9">
-            <h1>Props</h1>
+            <h1>Props &amp; State</h1>
+            <StateChild />
+            <h2>Props</h2>
             <p>
               Below is a function which one could use to generate a component
               using prop values passed down via a component call:

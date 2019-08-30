@@ -1,0 +1,121 @@
+.starbox {
+  width: 532px;
+  height: 508px;
+  overflow: hidden;
+  margin: 15px 0px 15px 0px;
+  padding: 15px 15px 15px 15px;
+  display: inline-block;
+  background-color: #d8d8d8;
+  border-radius: 0px;
+}
+
+.pathshape {
+  width: 502px;
+  height: 473px;
+}
+
+.pathstar {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 1856.6005859375;
+  stroke-dashoffset: 1856.6005859375;
+  animation: dash 8s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  /*animation-iteration-count: 1;*/
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  /*animation-direction: alternate;*/
+}
+
+.pathstar.pause {
+  animation-play-state: paused;
+}
+
+.pathstar.start {
+  animation-play-state: running;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1856.6005859375;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.fillstar {
+  stroke-miterlimit: 10;
+  fill: rgba(219, 219, 219, 0);
+  animation: fillStar 8s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes fillStar {
+  0% {
+    fill: rgb(63, 129, 184, 0);
+    stroke-width: 0;
+    stroke: rgb(63, 129, 184, 0);
+  }
+  50% {
+    fill: rgb(63, 129, 184, 0.1);
+    stroke-width: 0;
+    stroke: rgb(63, 129, 184, 0.3);
+  }
+  75% {
+    fill: rgb(63, 129, 184, 0.3);
+    stroke-width: 1;
+    stroke: rgb(63, 129, 184, 0.7);
+  }
+  100% {
+    fill: rgb(63, 129, 184, 1);
+    stroke-width: 2;
+    stroke: rgb(63, 129, 184, 1);
+  }
+}
+
+/* ##### CIRCLE ANIMATE */
+
+.circle {
+  display: block;
+  border: 2px solid #000;
+  width: 40px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  border-radius: 10px;
+  motion-path: path(
+    "M97.26,466.886l59.224-176.528L7.841,184.845 c0,0,68.692,0,92.348,0s91.679,0,91.679,0L251.195,7.862l59.388,176.983h184.336L346.038,290.469l59.246,176.518l-153.97-109.319 L97.26,466.886z"
+  );
+  offset-path: path(
+    "M97.26,466.886l59.224-176.528L7.841,184.845 c0,0,68.692,0,92.348,0s91.679,0,91.679,0L251.195,7.862l59.388,176.983h184.336L346.038,290.469l59.246,176.518l-153.97-109.319 L97.26,466.886z"
+  );
+  animation: sweep 8s linear infinite;
+  animation-delay: 1s;
+  animation-play-state: paused;
+}
+
+.circle.pause {
+  animation-play-state: paused;
+}
+
+.circle.start {
+  animation-play-state: running;
+}
+
+@keyframes sweep {
+  0% {
+    motion-offset: 0;
+    offset-distance: 0;
+  }
+
+  to {
+    motion-offset: 100%;
+    offset-distance: 100%;
+  }
+}

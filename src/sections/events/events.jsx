@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Menu from "../menu";
+import SearchBar from "./searchbar";
 
 class Events extends Component {
   constructor(props) {
@@ -10,8 +11,15 @@ class Events extends Component {
       theme: "btn btn-secondary ml-2",
       themeButton: "btn btn-secondary ml-2",
       name: "John",
-      surname: "Doe"
+      surname: "Doe",
+      searchText: "Search text..."
     };
+  }
+
+  submitForm(e) {
+    e.preventDefault();
+    const { searchText } = this.state;
+    this.props.onSubmit(searchText);
   }
 
   componentDidMount() {
@@ -97,6 +105,7 @@ class Events extends Component {
           </div>
           <div className="col-md-9">
             <h1>Working with Events</h1>
+            <SearchBar searchText={this.state.searchText} />
             <h2>Using Event Handlers</h2>
             <p>
               Below are two variables which are in the state. Try changing the

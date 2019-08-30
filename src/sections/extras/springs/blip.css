@@ -1,0 +1,202 @@
+.blip-word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.letter-b {
+  fill: rgb(196, 76, 76);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.letter-l {
+  fill: #fff;
+}
+
+.letter-i {
+  fill: #fff;
+}
+
+.letter-p {
+  fill: #fff;
+}
+
+.blip-wrap {
+  width: 100%;
+  height: 250px;
+  background-color: #55613c;
+  overflow: hidden;
+}
+
+.blip-inner {
+  width: 200px;
+  height: 200px;
+  animation: moveBlip 7s infinite ease-in-out;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+@keyframes moveBlip {
+  0% {
+    transform: translate(-200px);
+  }
+  40% {
+    transform: translate(260px);
+  }
+  100% {
+    transform: translate(900px);
+  }
+}
+
+.blip {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+  animation: scaleBlip 7s infinite ease-in-out;
+}
+
+@keyframes scaleBlip {
+  0% {
+    transform: scale(0.8);
+  }
+  40% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.blip:hover {
+  transform: scale(1.1);
+  /* transform: rotate(-5deg); */
+  /*transform: translate(10px, 10px);*/
+}
+
+.outer {
+  fill: #e8e8e8;
+  stroke: none;
+  stroke-width: 0px;
+}
+
+.black {
+  fill: #000000;
+}
+
+.white {
+  fill: #fff;
+}
+
+.blip01 {
+  fill: #c7b299;
+}
+.blip02 {
+  fill: #998675;
+}
+.blip03 {
+  fill: #d3bbaa;
+}
+.blip04 {
+  fill: #736357;
+}
+.blip05 {
+  fill: #e4d3c4;
+}
+.blip06 {
+  fill: #231f20;
+}
+.blip07 {
+  fill: #dcc7b4;
+}
+.blip .blip08 {
+  fill: #7a9f3d;
+  -webkit-transition: fill 2s; /* Safari prior 6.1 */
+  transition: fill 2s;
+}
+
+.blip:hover .blip08 {
+  fill: #91b655;
+}
+
+.blip .blip09 {
+  fill: #9ab741;
+  -webkit-transition: fill 2s; /* Safari prior 6.1 */
+  transition: fill 2s;
+}
+
+.blip:hover .blip09 {
+  fill: #adca55;
+}
+
+.blip .blip10 {
+  fill: #b4ce5f;
+  -webkit-transition: fill 2s; /* Safari prior 6.1 */
+  transition: fill 2s;
+}
+
+.blip:hover .blip10 {
+  fill: #c0d872;
+}
+
+.blip .blip11 {
+  fill: #cadd75;
+  -webkit-transition: fill 2s; /* Safari prior 6.1 */
+  transition: fill 2s;
+}
+
+.blip:hover .blip11 {
+  fill: #d5e496;
+}
+
+/* ####### SPINNER ####### */
+
+.spinner {
+  display: none;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.spinner .spinner-01 {
+  fill: #e0e0e0;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+}
+
+.spinner:hover .spinner-01 {
+  fill: #6d7067;
+}
+
+.spinner .spinner-02 {
+  fill: #c2c2c2;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+  animation: doRotate 8s infinite linear;
+  transform-origin: center center;
+}
+
+.spinner:hover .spinner-02 {
+  fill: #6d7067;
+}
+
+.spinner-03 {
+  fill: #8f918c;
+  animation: doRotate 8s infinite linear;
+  transform-origin: center center;
+}
+
+@keyframes doRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

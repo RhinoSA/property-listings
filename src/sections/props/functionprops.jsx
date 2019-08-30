@@ -6,7 +6,7 @@ class FunctionProps extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      namesNew: ["John", "Simon", "Patrick", "Michael"]
+      namesNew: ["Lion", "Leopard", "Elephant", "Buffalo"]
     };
   }
 

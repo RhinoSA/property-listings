@@ -3,6 +3,9 @@ import Menu from "../menu";
 
 class RouterBasics extends Component {
   state = {};
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div className="container">

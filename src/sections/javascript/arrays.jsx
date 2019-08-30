@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Menu from "../menu";
-
+import CommaList from "./commalist";
 import Summary from "./summary";
+import SelectSwitch from "./selectswitch";
 
 class Arrays extends Component {
   constructor(props) {
@@ -12,6 +13,12 @@ class Arrays extends Component {
         { id: 2, action: "Clean the house", done: true },
         { id: 3, action: "Mow the lawn", done: false },
         { id: 4, action: "Wash the car", done: false }
+      ],
+      products: [
+        { id: 1, name: "Apple", price: 2.99, stock: 2 },
+        { id: 2, name: "Orange", price: 2.4, stock: 1 },
+        { id: 3, name: "Pear", price: 2.39, stock: 0 },
+        { id: 4, name: "Peach", price: 2.99, stock: 3 }
       ]
     };
   }
@@ -21,6 +28,9 @@ class Arrays extends Component {
   }
 
   render() {
+    let totalValue = this.state.products
+      .filter(item => item.stock > 0)
+      .reduce((prev, item) => prev + item.price * item.stock, 0);
     return (
       <div className="container">
         <div className="row">
@@ -29,6 +39,154 @@ class Arrays extends Component {
           </div>
           <div className="col-md-9">
             <h1>JavaScript Arrays</h1>
+            {/* SPECIES SWITCHER */}
+            <SelectSwitch />
+            {/* END SPECIES SWITCHER */}
+            {/* ARRAY TOTALS */}
+            <h2>Getting Array Totals</h2>
+            <p>
+              This is an example of how one can get the total value of an array
+              of numbers.
+            </p>
+            <table className="table">
+              <thead className="thead-dark">
+                <tr>
+                  <th>Name</th>
+                  <th className="text-right">Price</th>
+                  <th className="text-right">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.products
+                  .filter(item => item.stock > 0)
+                  .map(item => {
+                    return (
+                      <tr key={item.id}>
+                        <td>{item.name}</td>
+                        <td className="text-right">${item.price.toFixed(2)}</td>
+                        <td className="text-right">
+                          ${(item.stock * item.price).toFixed(2)}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                <tr>
+                  <td colSpan="3" className="text-right">
+                    $
+                    {totalValue
+                      .toFixed(2)
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h4>The Products Array:</h4>
+            <p>This is the array of products used in this example:</p>
+            <p className="alert alert-secondary">
+              products: [<br />
+              &nbsp;&nbsp;&#123; id: 1, name: "Apple", price: 2.99, stock: 2
+              &#125;,
+              <br />
+              &nbsp;&nbsp;&#123; id: 2, name: "Orange", price: 2.4, stock: 1
+              &#125;,
+              <br />
+              &nbsp;&nbsp;&#123; id: 3, name: "Pear", price: 2.39, stock: 0
+              &#125;,
+              <br />
+              &nbsp;&nbsp;&#123; id: 4, name: "Peach", price: 2.99, stock: 3
+              &#125;
+              <br />]
+            </p>
+            <h4>Using the Reduce Function:</h4>
+            <p>
+              This is the function used to get the total value of all the
+              products in the array:
+            </p>
+            <p className="alert alert-secondary">
+              let totalValue = this.state.products
+              <br />
+              &nbsp;&nbsp;.filter(item =&gt; item.stock &gt; 0)
+              <br />
+              &nbsp;&nbsp;.reduce((prev, item) =&gt; prev + item.price *
+              item.stock, 0);
+            </p>
+            <h4>The Products Table:</h4>
+            <p className="alert alert-secondary">
+              &lt;table className="table"&gt;
+              <br />
+              &nbsp;&nbsp;&lt;thead className="thead-dark"&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th
+              className="text-right"&gt;Price&lt;/th&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th
+              className="text-right"&gt;Subtotal&lt;/th&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+              <br />
+              &nbsp;&nbsp;&lt;/thead&gt;
+              <br />
+              &nbsp;&nbsp;&lt;tbody&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&#123;this.state.products
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.filter(item =&gt; item.stock
+              &gt; 0)
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.map(item =&gt; &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr
+              key=&#123;item.id&#125;&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&#123;item.name&#125;&lt;/td&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td
+              className="text-right"&gt;&#36;{/**/}
+              &#123;item.price.toFixed(2)&#125;&lt;/td&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td
+              className="text-right"&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#36;
+              {/**/}&#123;(item.stock * item.price).toFixed(2)&#125;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;)&#125;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td colSpan="3"
+              className="text-right"&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#36;{/**/}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;totalValue
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.toFixed(2)
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.replace(/\B(?=(\d&#123;3&#125;)+(?!\d))/g,
+              ",")&#125;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+              <br />
+              &nbsp;&nbsp;&lt;/tbody&gt;
+              <br />
+              &lt;/table&gt;
+            </p>
+            {/* END ARRAY TOTALS */}
+            <h2>Built-in Array Methods</h2>
+            <p>This is a list of commonly used array methods.</p>
             <table className="table mt-3">
               <thead className="thead-dark">
                 <tr>
@@ -231,7 +389,7 @@ class Arrays extends Component {
             </p>
             <h4>The Output</h4>
             <Summary names={["Bob", "Alice", "Dora"]} />
-            <h2>Mapping Function</h2>
+            <h2>Mapping an Array</h2>
             <p>
               This is an example of a mapping function which generates a list of
               items from an array. The function also uses the filter() function
@@ -288,6 +446,85 @@ class Arrays extends Component {
                   return <li key={item.id}>{item.action}</li>;
                 })}
             </ul>
+            <h2>Creating a Comma-Separated List</h2>
+            <p>
+              This is an example of a function which converts an array of words
+              into a comma separated sentence with commas and also adding "and"
+              before the last word. If there are only two words in the array,
+              then the two words are separated with "and".
+            </p>
+            <p className="alert alert-secondary">
+              import React from "react";
+              <br />
+              <br />
+              const capitalize = s =&gt; &#123;
+              <br />
+              &nbsp;&nbsp;if (typeof s !== "string") return "";
+              <br />
+              &nbsp;&nbsp;return s.charAt(0).toUpperCase() + s.slice(1);
+              <br />
+              &#125;;
+              <br />
+              <br />
+              const noun = ["lion", "leopard", "cheetah"];
+              <br />
+              let info = "";
+              <br />
+              if (noun.length === 1) &#123;
+              <br />
+              &nbsp;&nbsp;for (let i = 0; i &lt; noun.length; i++) &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;info += noun[i];
+              <br />
+              &nbsp;&nbsp;&#125;
+              <br />
+              &#125; else &#123;
+              <br />
+              &nbsp;&nbsp;for (let i = 0; i &lt; noun.length; i++) &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;if (i === noun.length - 1) &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info += "and " + noun[i] +
+              ".";
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&#125; else if (i === noun.length - 2)
+              &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info += "" + noun[i] + " ";
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&#125; else &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info += noun[i] + ", ";
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&#125;
+              <br />
+              &nbsp;&nbsp;&#125; &#125;
+              <br />
+              <br />
+              const CommaList = () =&gt; &#123;
+              <br />
+              &nbsp;&nbsp;return (<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;React.Fragment&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&#123;capitalize(info)&#125;&lt;/p&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/React.Fragment&gt;
+              <br />
+              &nbsp;&nbsp;);
+              <br />
+              &#125;;
+              <br />
+              <br />
+              export default CommaList;
+            </p>
+            <h4>The Output:</h4>
+            <CommaList />
+            <p>
+              There is also an "info" variable included in the function which
+              can be used to add a string to the start of the outputted
+              sentence. This could be used to create this sentence:
+            </p>
+            <p>My cats names are Joe, Simon and Mika.</p>
           </div>
         </div>
       </div>

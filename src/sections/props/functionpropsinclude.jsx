@@ -6,7 +6,7 @@ export default class FunctionPropsInclude extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      names: ["Andrew", "Bob", "Mike", "Simon"]
+      names: ["Lion", "Leopard", "Elephant", "Buffalo"]
     };
   }
 

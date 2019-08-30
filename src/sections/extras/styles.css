@@ -64,3 +64,236 @@
   border-radius: 6px;
   background-color: #fff;
 }
+
+/* PROPERTY */
+
+/* DEMO STYLES */
+.nav {
+  padding: 30px 0;
+  background-color: #222;
+}
+.nav a {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin: 0 15px;
+  padding: 10px;
+  border: 1px rgba(255, 255, 255, 0.5) solid;
+  transition: all 0.3s linear;
+  text-decoration: none;
+  color: white;
+}
+.nav a.active {
+  background-color: #61dafb;
+  color: #222;
+}
+
+/* appear - on page load */
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+/* enter */
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 2500ms linear 2500ms;
+}
+
+/* exit */
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 2500ms linear;
+}
+.fade-exit-done {
+  opacity: 0;
+}
+
+/* slide enter */
+.slide-enter {
+  opacity: 0;
+  transform: scale(0.99) translateY(1px);
+  z-index: 1;
+}
+.slide-enter.slide-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 1500ms linear 500ms, transform 1500ms ease-in-out 500ms;
+}
+
+/* slide exit */
+.slide-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.slide-exit.slide-exit-active {
+  opacity: 0;
+  transform: scale(0.99) translateY(1px);
+  transition: opacity 750ms linear, transform 750ms ease-out;
+}
+.slide-exit-done {
+  opacity: 0;
+}
+
+/* Card */
+.card-container {
+  position: relative;
+  max-width: 226px;
+  margin: 0 auto;
+}
+
+.card.property {
+  border: 3px #f3f3f3 solid;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  background-color: #f3f3f3;
+  padding: 10px;
+  max-width: 220px;
+  text-align: left;
+  margin: 0 auto;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.card.property:hover {
+  background-color: #f3f3f3;
+  border-color: #f3f3f3;
+}
+.card.property img {
+  max-width: calc(100%);
+  margin: 0 auto;
+  display: block;
+}
+.card.property .index {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  line-height: 20px;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 0 10px;
+}
+.card.property .price {
+  margin: 0;
+  padding: 10px 0;
+  font-weight: bold;
+}
+.card.property .details {
+  position: relative;
+}
+.card.property .features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.card.property .features li {
+  padding-left: 24px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.card.property .features li span {
+  display: none;
+}
+/*
+.card .features li.icon-bed {
+  background: url(./assets/bed-left-side.svg) left center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+.card .features li.icon-bath {
+  background: url(./assets/bathtub.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+.card .features li.icon-car {
+  background: url(./assets/car-compact.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+*/
+
+.photospring {
+  width: 45ch;
+  height: 45ch;
+  background: grey;
+  border-radius: 5px;
+  background-image: url(https://drscdn.500px.org/photo/435236/q%3D80_m%3D1500/v2?webp=true&sig=67031bdff6f582f3e027311e2074be452203ab637c0bd21d89128844becf8e40);
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
+  will-change: transform;
+  border: 15px solid white;
+  position: relative;
+  z-index: 20;
+}
+
+.photospring:hover {
+  box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+}
+
+.draggable-main {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+}
+
+.content {
+  position: relative;
+  width: 320px;
+  height: 240px;
+}
+
+.content > div {
+  position: absolute;
+  width: 320px;
+  height: 90px;
+  overflow: visible;
+  pointer-events: auto;
+  transform-origin: 50% 50% 0px;
+  border-radius: 5px;
+  color: white;
+  line-height: 90px;
+  padding-left: 32px;
+  font-size: 14.5px;
+  background: lightblue;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.content > div:nth-child(1) {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+.content > div:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+.content > div:nth-child(3) {
+  background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+}
+.content > div:nth-child(4) {
+  background: linear-gradient(135deg, #c3cfe2 0%, #c3cfe2 100%);
+}

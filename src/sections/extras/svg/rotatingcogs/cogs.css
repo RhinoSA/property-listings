@@ -1,0 +1,354 @@
+:root {
+  --cogBackgroundColor: #2b659b;
+  --cogOneColor: #3077ae;
+  --cogOneColorHover: #4380b3;
+  --cogTwoColor: #2e70a4;
+  --cogTwoColorHover: #3f84ba;
+  --cogThreeColor: #2e70a4;
+  --cogThreeColorHover: #3f84ba;
+  --cogFourColor: #3077ae;
+  --cogFourColorHover: #4380b3;
+  --cogFiveColor: #2e70a4;
+  --cogFiveColorHover: #3f84ba;
+  --cogSixColor: #3077ae;
+  --cogSixColorHover: #4380b3;
+  --cogSevenColor: #2e70a4;
+  --cogSevenColorHover: #3f84ba;
+  --cogEightColor: #3077ae;
+  --cogEightColorHover: #4380b3;
+}
+
+.cog-01 .circle-cog,
+.cog-02 .circle-cog,
+.cog-03 .circle-cog,
+.cog-04 .circle-cog,
+.cog-05 .circle-cog,
+.cog-06 .circle-cog,
+.cog-07 .circle-cog,
+.cog-08 .circle-cog {
+  cursor: pointer;
+}
+
+.cog-01 .circle-cog {
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-name: circleTransitionOut;
+  fill: rgba(250, 250, 250, 0.2);
+  -webkit-transition: r 2s;
+  transition: r 2s;
+  animation-fill-mode: backwards;
+}
+
+.cog-01:hover .circle-cog {
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-name: circleTransition;
+  -webkit-transition: r 2s;
+  transition: r 2s;
+  animation-fill-mode: both;
+}
+
+.cog-02 .circle-cog,
+.cog-05 .circle-cog {
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-name: circleTransitionOutSmall;
+  fill: rgba(250, 250, 250, 0.2);
+  -webkit-transition: r 2s;
+  transition: r 2s;
+  animation-fill-mode: backwards;
+}
+
+.cog-02:hover .circle-cog,
+.cog-05:hover .circle-cog {
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-name: circleTransitionSmall;
+  -webkit-transition: r 2s;
+  transition: r 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes circleTransition {
+  from {
+    r: 0%;
+    opacity: 0;
+  }
+  to {
+    r: 150px;
+    opacity: 0.4;
+  }
+}
+
+@keyframes circleTransitionOut {
+  from {
+    r: 150px;
+    opacity: 0.4;
+  }
+  to {
+    r: 0%;
+    opacity: 0;
+  }
+}
+
+@keyframes circleTransitionSmall {
+  from {
+    r: 0%;
+    opacity: 0;
+  }
+  to {
+    r: 80px;
+    opacity: 0.4;
+  }
+}
+
+@keyframes circleTransitionOutSmall {
+  from {
+    r: 80px;
+    opacity: 0.4;
+  }
+  to {
+    r: 0%;
+    opacity: 0;
+  }
+}
+
+.rotating-cogs {
+  background-color: var(--cogBackgroundColor);
+  height: 470px;
+  padding: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: cogsFadeIn 4s linear;
+  animation-delay: 12s;
+  animation-fill-mode: both;
+}
+
+@keyframes cogsFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cog-01 {
+  display: inline-block;
+  position: absolute;
+  top: -2px;
+  left: -99px;
+  width: 500px;
+  animation: rotateCog01 32s infinite linear;
+  z-index: 20;
+  fill: var(--cogOneColor);
+  -webkit-transition: fill 2s;
+  transition: fill 2s;
+  z-index: 10;
+}
+
+.cog-01 .mouse-detector:hover {
+  fill: var(--cogOneColorHover);
+}
+
+@keyframes rotateCog01 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cog-02 {
+  display: inline-block;
+  position: absolute;
+  top: -1px;
+  left: 330px;
+  width: 205px;
+  animation: rotateCog01 15s infinite reverse linear;
+  fill: var(--cogTwoColor);
+  -webkit-transition: fill 2s;
+  transition: fill 2s;
+  z-index: 40;
+  cursor: pointer;
+}
+
+.cog-02:hover {
+  fill: var(--cogTwoColorHover);
+}
+
+@keyframes rotateCog02 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cog-03 {
+  display: inline-block;
+  position: absolute;
+  top: 171px;
+  left: 386px;
+  width: 170px;
+  animation: rotateCog03 12s infinite linear;
+  fill: var(--cogThreeColor);
+  -webkit-transition: fill 2s;
+  transition: fill 2s;
+  cursor: pointer;
+}
+
+.cog-03:hover {
+  fill: var(--cogThreeColorHover);
+}
+
+@keyframes rotateCog03 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cog-04 {
+  display: inline-block;
+  position: absolute;
+  top: 270px;
+  left: 520px;
+  width: 80px;
+  animation: rotateCog04 6s infinite reverse linear;
+  fill: var(--cogFourColor);
+  -webkit-transition: fill 2s;
+  transition: fill 2s;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.cog-04:hover {
+  fill: var(--cogFourColorHover);
+}
+
+@keyframes rotateCog04 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cog-05 {
+  display: inline-block;
+  position: absolute;
+  top: 246px;
+  left: 573px;
+  width: 205px;
+  animation: rotateCog05 15s infinite linear;
+  fill: var(--cogFiveColor);
+  -webkit-transition: fill 2s;
+  transition: fill 2s;
+  cursor: pointer;
+}
+
+.cog-05:hover {
+  fill: var(--cogFiveColorHover);
+}
+
+@keyframes rotateCog05 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cog-06 {
+  display: inline-block;
+  position: absolute;
+  top: -234px;
+  left: 488px;
+  width: 500px;
+  animation: rotateCog06 32s infinite linear;
+  z-index: 20;
+  fill: var(--cogSixColor);
+  -webkit-transition: fill 2s;
+  transition: fill 2s;
+  cursor: pointer;
+}
+
+.cog-06:hover {
+  fill: var(--cogSixColorHover);
+}
+
+@keyframes rotateCog06 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cog-07 {
+  display: inline-block;
+  position: absolute;
+  top: 332px;
+  left: 444px;
+  width: 170px;
+  animation: rotateCog07 12s infinite reverse linear;
+  z-index: 20;
+  fill: var(--cogSevenColor);
+  cursor: pointer;
+  -webkit-transition: fill 2s;
+  transition: fill 2s;
+  cursor: pointer;
+}
+
+.cog-07:hover {
+  fill: var(--cogSevenColorHover);
+}
+
+@keyframes rotateCog07 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cog-08 {
+  display: inline-block;
+  position: absolute;
+  top: 367px;
+  left: 385px;
+  width: 80px;
+  animation: rotateCog08 6s infinite linear;
+  fill: var(--cogEightColor);
+  cursor: pointer;
+  -webkit-transition: fill 2s;
+  transition: fill 2s;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.cog-08:hover {
+  fill: var(--cogEightColorHover);
+}
+
+@keyframes rotateCog08 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

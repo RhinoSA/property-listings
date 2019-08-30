@@ -2,7 +2,6 @@ import React from "react";
 import { useContext } from "react";
 import { MammalContext } from "../../../contextmammals";
 
-// Get all unique values
 const getUnique = (items, value) => {
   return [...new Set(items.map(item => item[value]))];
 };
@@ -13,9 +12,7 @@ export default function MammalFilter({ mammals }) {
     return s.charAt(0).toUpperCase() + s.slice(1);
   };
   const context = useContext(MammalContext);
-  //console.log(context);
   const { handleChange, order, family, carnivora } = context;
-  // Get unique types
   let types = getUnique(mammals, "order");
   // Add all
   types = ["all", ...types];

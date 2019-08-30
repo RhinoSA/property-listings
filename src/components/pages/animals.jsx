@@ -6,7 +6,6 @@ import MammalContainer from "../modules/species/mammalcontainer";
 
 export default class Animals extends Component {
   static contextType = MammalContext;
-
   componentDidMount() {
     window.scrollTo(0, 0);
   }

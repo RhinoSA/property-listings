@@ -138,8 +138,7 @@ class Navbar extends Component {
         { id: 6, title: "Shop", linkURL: "/shop", linkType: "" },
         { id: 7, title: "Cart", linkURL: "/cart", linkType: "" },
         { id: 8, title: "Rooms", linkURL: "/rooms", linkType: "" },
-        { id: 9, title: "ToDo", linkURL: "/todo/todo", linkType: "" },
-        { id: 10, title: "JavaScript", linkURL: "/javascript", linkType: "" }
+        { id: 9, title: "ToDo", linkURL: "/todo/todo", linkType: "" }
       ]
     };
   }

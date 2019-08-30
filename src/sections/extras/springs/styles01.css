@@ -1,0 +1,230 @@
+.test-block {
+  display: inline-block;
+  background-color: #333;
+}
+
+.simple-trans-main > div {
+  cursor: pointer;
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 300;
+  margin-top: 40px;
+  z-index: 2;
+  font-size: 5em;
+  will-change: transform, opacity;
+  text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
+}
+
+.c.back {
+  cursor: pointer;
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 3em;
+  font-weight: 600;
+  text-align: center;
+  line-height: 92px;
+}
+
+.c.front {
+  cursor: pointer;
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.2);
+  color: rgba(54, 54, 54, 0.8) !important;
+  font-size: 3em;
+  font-weight: 600;
+  text-align: center;
+  line-height: 92px;
+}
+
+/* SLIDER COLOUR */
+
+.item {
+  color: #fff;
+  position: relative;
+  width: 300px;
+  height: 100px;
+  pointer-events: auto;
+  transform-origin: 50% 50% 0px;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.fg {
+  cursor: -webkit-grab;
+  background-color: #272727;
+  color: rgba(255, 255, 255, 0.8) !important;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2);
+  font-size: 3em;
+  font-weight: 600;
+  transition: box-shadow 0.75s;
+}
+
+.fg:active {
+  cursor: -webkit-grabbing;
+  box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4);
+}
+
+.fg > * {
+  pointer-events: none;
+}
+
+.av {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* PARALLAX */
+/*
+.card1,
+.card2,
+.card3,
+.card4 {
+  position: absolute;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+.card1 {
+  min-width: 60ch;
+  min-height: 60ch;
+  width: 45vw;
+  height: 45vw;
+  max-width: 100ch;
+  max-height: 100ch;
+  background-image: url(https://image.flaticon.com/icons/svg/119/119596.svg);
+}
+
+.card2 {
+  width: 25ch;
+  height: 25ch;
+  background-image: url(https://image.flaticon.com/icons/svg/789/789395.svg);
+}
+
+.card3 {
+  opacity: 0.9;
+  width: 25ch;
+  height: 25ch;
+  background-image: url(https://image.flaticon.com/icons/svg/414/414927.svg);
+}
+
+.card4 {
+  width: 25ch;
+  height: 25ch;
+  background-image: url(https://image.flaticon.com/icons/svg/789/789392.svg);
+}
+*/
+/*
+.container07 {
+  position: relative;
+  width: 100%;
+  height: 200;
+  overflow: scroll;
+  text-align: justify;
+  background: white;
+  color: lightpink;
+  font-size: 20em;
+  line-height: 0.9em;
+  font-weight: 800;
+  background: #f0f0f0;
+}
+
+svg {
+  pointer-events: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 40vw;
+  max-width: 600px;
+  transform-origin: 0% 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 10em;
+}
+
+#bg {
+  fill: #2da1dc;
+}
+#sweater > path:nth-child(1) {
+  fill: #60d882;
+}
+#sweater > path:nth-child(2) {
+  fill: #37c47a;
+}
+#sweater > path:nth-child(3) {
+  fill: #37c47a;
+}
+
+#face > path:nth-child(1) {
+  fill: #ffe2b8;
+}
+#face > path:nth-child(2) {
+  fill: #ffc987;
+}
+#eye > path:nth-child(2) {
+  fill: #f0f0f0;
+}
+#eye > g:first-of-type > path:nth-child(1) {
+  fill: #159e97;
+}
+#eye > g:first-of-type > path:nth-child(2) {
+  fill: #0f9390;
+}
+#eye > g:last-of-type > path:nth-child(2) {
+  fill: #231f20;
+}
+#mouth > path:nth-child(1) {
+  fill: #f24976;
+}
+#mouth > path:nth-child(2) {
+  fill: #b7092b;
+}
+#mouth > path:nth-child(3) {
+  fill: #a00026;
+}
+#mouth > path:nth-child(4) {
+  fill: #ffffff;
+}
+#hair > path:nth-of-type(1) {
+  fill: #62317c;
+}
+#hair > path:nth-of-type(2) {
+  fill: #62317c;
+}
+#hair > path:nth-of-type(3) {
+  fill: #62317c;
+}
+*/

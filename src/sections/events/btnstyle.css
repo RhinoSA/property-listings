@@ -1,0 +1,27 @@
+.btn-search {
+  opacity: 0;
+  width: 0px;
+  background-color: #333;
+  -webkit-transition: width 1s, opacity 1s, background-color 1s;
+  transition: width 1s, opacity 1s, background-color 1s;
+}
+
+.btn-search.active {
+  opacity: 1;
+  width: 130px;
+  background-color: #fff;
+}
+
+.search-text {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  margin-right: 200px;
+  margin-top: 3px;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+}
+
+.search-text.active {
+  opacity: 1;
+}

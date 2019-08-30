@@ -1,0 +1,479 @@
+/* ########## BAOBAB ########## */
+.space-scene {
+  background-image: url("./stars.svg");
+}
+
+.stars {
+  opacity: 0.5;
+}
+.halo {
+  fill: #2e1f3f;
+  -webkit-filter: blur(25px);
+  filter: blur(25px);
+}
+.baobab {
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.filter-wrap {
+  width: 200px;
+  height: 160px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  padding: 0px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.filter-wrap p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 1);
+  color: #fff;
+  padding: 3px 0px 3px 0px;
+  margin: 0px;
+  text-align: center;
+  border-top: solid 1px #fff;
+}
+
+.blip-gray {
+  width: 200px;
+  cursor: pointer;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  opacity: 0.4;
+  -webkit-transition: filter 1s, opacity 1s;
+  transition: filter 1s, opacity 1s;
+}
+
+.blip-gray:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.baobab.blur {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.baobab.grayscale {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.baobab.sepia {
+  -webkit-filter: sepia(1);
+  filter: sepia(1);
+}
+
+.baobab.saturated {
+  -webkit-filter: saturate(8);
+  filter: saturate(8);
+}
+
+.baobab.hue {
+  -webkit-filter: hue-rotate(90deg);
+  filter: hue-rotate(90deg);
+}
+
+.baobab.invert {
+  -webkit-filter: invert(0.8);
+  filter: invert(0.8);
+}
+
+.baobab.opacity {
+  -webkit-filter: opacity(0.2);
+  filter: opacity(0.2);
+}
+
+.baobab.brightness {
+  -webkit-filter: brightness(2);
+  filter: brightness(2);
+}
+
+.baobab.contrast {
+  -webkit-filter: contrast(4);
+  filter: contrast(4);
+}
+
+.baobab.shadow {
+  -webkit-filter: drop-shadow(16px 16px 10px rgba(134, 134, 134, 0.9));
+  filter: drop-shadow(16px 16px 10px rgba(134, 134, 134, 0.9));
+}
+
+.iconset {
+  display: none;
+}
+
+.social {
+  position: relative;
+  display: inline-block;
+  border-radius: 30px;
+  width: auto;
+  background-color: #e8e8e8;
+  padding: 5px 0px 5px 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.icon {
+  fill: #3472b9;
+  width: 40px;
+  height: auto;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-right: 5px;
+  -webkit-transition: fill 0.5s, background-color 1s;
+  transition: fill 0.5s, background-color 1s;
+}
+
+.icon:hover {
+  fill: #fff;
+  background-color: #333;
+  transform: scale(1.15);
+}
+
+.icon:not(:hover) {
+  animation: IconsOut;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes IconsOut {
+  from {
+    transform: scale(1.15);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.demo-back {
+  width: 400px;
+  height: 350px;
+  margin: 15px 0px 15px 0px;
+  background-image: url("./baobab.svg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  position: relative;
+  background-color: #d6cfc4;
+}
+
+.demo-back .demo-words {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.planet {
+  width: 250px;
+  height: 250px;
+  margin-top: 65px;
+  margin-left: 100px;
+  opacity: 1;
+  animation: planetScale 10s infinite ease-in-out;
+}
+
+@keyframes planetScale {
+  0% {
+    transform: scale(0.9);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.space-scene {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 15px 0px 15px 0px;
+  overflow: hidden;
+  background-color: #3b3044;
+}
+
+.space-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  animation: spaceColor 10s infinite ease-in-out;
+  background-color: #3b3044;
+  font-size: 40px;
+  text-align: right;
+  padding-right: 100px;
+  padding-top: 160px;
+  color: #fff;
+}
+
+@keyframes spaceColor {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rocket {
+  width: 150px;
+  height: 150px;
+  animation: rocketOrientation 10s infinite ease-in-out;
+}
+
+@keyframes rocketOrientation {
+  0% {
+    transform: rotate(90deg);
+  }
+  20% {
+    transform: rotate(90deg);
+  }
+  80% {
+    transform: rotate(90deg);
+  }
+  90% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.rocket-scale {
+  animation: rocketScale 10s infinite ease-in-out;
+}
+
+@keyframes rocketScale {
+  0% {
+    transform: scale(0.7);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.7);
+  }
+}
+
+.rotator-one {
+  -moz-transform-origin: 25px 25px;
+  transform-origin: 40px 40px;
+}
+
+.rotator-two {
+  -moz-transform-origin: 25px 25px;
+  transform-origin: 100px 100px;
+}
+
+.rotator-three {
+  -moz-transform-origin: 25px 25px;
+  transform-origin: 170px 40px;
+}
+
+.shiftme {
+  transform: scale(-1, 1) translate(-100, -80);
+}
+
+.track {
+  stroke: #ccc;
+}
+
+/* PLANE ANIMATION START */
+
+.mover {
+  motion-path: path(
+    "M655.034,208.219c0,47.72-52.736,89.891-133.386,115.332 c-50.681,15.988-112.386,44.767-178.954,44.767c-75.859,0-190.483-21.126-237.692-46.581 c-65.086-35.095-78.967-70.198-74.649-113.518c4.458-44.731,69.114-48.417,126.335-97.055 c51.048-43.391,97.629-77.848,174.839-81.677c64.092-3.178,128.896,31.267,182.496,42.753 C601.79,91.048,655.034,158.578,655.034,208.219z"
+  );
+  offset-path: path(
+    "M655.034,208.219c0,47.72-52.736,89.891-133.386,115.332 c-50.681,15.988-112.386,44.767-178.954,44.767c-75.859,0-190.483-21.126-237.692-46.581 c-65.086-35.095-78.967-70.198-74.649-113.518c4.458-44.731,69.114-48.417,126.335-97.055 c51.048-43.391,97.629-77.848,174.839-81.677c64.092-3.178,128.896,31.267,182.496,42.753 C601.79,91.048,655.034,158.578,655.034,208.219z"
+  );
+  motion-rotation: reverse;
+  animation: move 10s linear infinite;
+}
+@keyframes move {
+  100% {
+    motion-offset: 180deg;
+    offset-distance: 100%;
+  }
+}
+
+.mover {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+}
+
+/* PLANE ANIMATION END */
+
+.marker {
+  motion-path: path("M 100 100 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0");
+  offset-path: path("M 100 100 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0");
+  animation: move 3s linear infinite;
+}
+
+@keyframes move {
+  100% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+  }
+}
+
+rect {
+  -moz-transform-origin: 25px 25px;
+  transform-origin: 0% 0%;
+}
+
+.another-circle {
+  stroke-dasharray: 227;
+  stroke-dashoffset: 227;
+  transition: stroke-dashoffset 2s linear;
+}
+.another-circle:hover {
+  stroke-dashoffset: 0;
+  cursor: pointer;
+}
+
+.inner-spin {
+  fill: rgb(199, 163, 96);
+  stroke: none;
+  stroke-width: 0;
+  stroke-miterlimit: 10;
+}
+
+.inner-spin :hover {
+  fill: rgb(219, 180, 107);
+}
+
+.circle-main {
+  fill: rgb(178, 119, 80);
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.motion-path {
+  transform: scale(0.8);
+}
+.main-shape {
+  width: 200px;
+  height: 200px;
+}
+
+.path-follower {
+  fill: rgb(199, 163, 96);
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.springer {
+  fill: rgb(199, 163, 96);
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  cursor: pointer;
+  -webkit-transition: fill 1s; /* Safari prior 6.1 */
+  transition: fill 1s;
+}
+
+.springer:hover {
+  fill: rgb(219, 180, 107);
+  stroke: #000000;
+}
+
+.circ-01 {
+  fill: rgba(155, 178, 80, 1);
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.circle-inner {
+  fill: #504b3b;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+.circle-group {
+  animation: rotateCircles 15s infinite ease-in-out;
+  transform-origin: center center;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+
+@keyframes rotateCircles {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(90deg);
+  }
+  80% {
+    transform: rotate(180deg);
+  }
+  90% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.star {
+  animation: rotateInfinite 8s linear;
+  transform-origin: center center;
+  animation-iteration-count: infinite;
+  fill: rgba(155, 178, 80, 1);
+  stroke: #000000;
+  stroke-width: 1;
+  stroke-miterlimit: 10;
+}
+
+@keyframes rotateInfinite {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

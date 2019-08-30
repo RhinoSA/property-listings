@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Menu from "../menu";
 import ConsumeContext from "./consumecontext";
+import Application from "./Application";
 
 class Context extends Component {
   state = {};
@@ -17,7 +18,8 @@ class Context extends Component {
             <Menu />
           </div>
           <div className="col-md-9">
-            <h1 className="mt-3">Using Contexts for Global Data</h1>
+            <h1>Using Contexts for Global Data</h1>
+            <Application />
             <p>
               The management of props can become difficult, regardless of how
               you choose to compose your application. As the complexity of the
@@ -62,10 +64,69 @@ class Context extends Component {
               <br />
               &#125;);
             </p>
-            <h4>The Context Consumer</h4>
+            <h4>Using the Context Provider</h4>
+            <p>
+              The createContext function returns a Provider and a Consumer
+              component. The Provider component is used to wrap contents in the
+              tree that requires access to the data provided by the context. We
+              also need to import the context into the component using the
+              context, which is often the root component, as in the example
+              below:
+            </p>
+            <p className="alert alert-secondary">
+              import React, &#123; Component &#125; from 'react';
+              <br />
+              <br />
+              import ProModeContext from './promodecontext';
+              <br />
+              import ConsumeContext from './components/consumecontext';
+              <br />
+              <br />
+              class App extends Component &#125;
+              <br />
+              &nbsp;&nbsp;render() &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ProModeContext&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ConsumeContext
+              /&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ProModeContext&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;);
+              <br />
+              &nbsp;&nbsp;&#125;
+              <br />
+              &#125;
+              <br />
+              <br />
+              export default App;
+            </p>
+            <h4>Using the Context Consumer</h4>
+            <p>
+              In the example below you will see the contents is wrapped by the
+              consumer inside the following tags. This is the simplified version
+              of the consumer component to show the relevant sections of the
+              code:
+            </p>
+            <p className="alert alert-secondary">
+              import &#123; ProModeContext &#125; from "./promodecontext";
+              <br />
+              <br />
+              &lt;ProModeContext.Consumer&gt;
+              <br />
+              &nbsp;&nbsp;&#123;contextData =&gt; (<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;...
+              <br />
+              &nbsp;&nbsp;)&#125;
+              <br />
+              &lt;/ProModeContext.Consumer&gt;
+            </p>
             <p>
               Below is the code for the component which uses the data that is
-              defines in the context:
+              defined in the context to create a list of items from an array of
+              data that is provided by the context Provider:
             </p>
             <p className="alert alert-secondary">
               import React, &#123; Component &#125; from "react";

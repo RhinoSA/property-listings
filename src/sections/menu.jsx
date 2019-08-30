@@ -20,28 +20,20 @@ export default function Menu() {
               <Link to="/home/arrays">Arrays</Link>
             </li>
             <li>
+              <Link to="/home/objects">Objects &amp; Classes</Link>
+            </li>
+            <li>
               <Link to="/home/operators">Operators</Link>
             </li>
             <li>
               <Link to="/home/conditionals">Conditionals</Link>
             </li>
             <li>
-              <Link to="/home/loops">Loops</Link>
-            </li>
-            <li>
-              <Link to="/home/replace">Replace</Link>
-            </li>
-            <li>
               <Link to="/home/modules">Modules</Link>
             </li>
-          </ol>
-        </li>
-        <li>
-          Creating an Application
-          <ol>
-            <li>Standalone Apps</li>
-            <li>Using Create React App</li>
-            <li>Deploying the App</li>
+            <li>
+              <Link to="/home/promises">Promises</Link>
+            </li>
           </ol>
         </li>
         <li>
@@ -50,8 +42,6 @@ export default function Menu() {
             <li>
               <Link to="/home/components">Components</Link>
             </li>
-            <li>Stateful Components</li>
-            <li>Stateless Components</li>
             <li>
               <Link to="/home/hoc-basics">Higher-Order Components</Link>
             </li>
@@ -66,8 +56,9 @@ export default function Menu() {
             <li>
               <Link to="/home/lists">Creating Lists</Link>
             </li>
-            <li>Lists with Conditionals</li>
-            <li>Reordering Lists</li>
+            <li>
+              <Link to="/home/reordering">Reordering Lists</Link>
+            </li>
             <li>
               <Link to="/home/filtering">Filtering Lists</Link>
             </li>
@@ -87,6 +78,9 @@ export default function Menu() {
             </li>
             <li>
               <Link to="/home/proptypes">Prop Types</Link>
+            </li>
+            <li>
+              <Link to="/home/state-from-props">Setting State from Props</Link>
             </li>
           </ol>
         </li>
@@ -119,13 +113,16 @@ export default function Menu() {
             <li>Indicating the Active Route</li>
           </ol>
         </li>
-        <li>Reconciliation &amp; Lifecycles</li>
+        <li>
+          <Link to="/home/lifecycle">Reconciliation &amp; Lifecycles</Link>
+        </li>
         <li>
           <Link to="/home/context">Context</Link>
         </li>
         <li>
           React Extras
           <ol>
+            <li><Link to="/home/snap">Snap SVG</Link></li>
             <li>
               <Link to="/home/react-icons">React Icons</Link>
             </li>
@@ -151,6 +148,15 @@ export default function Menu() {
             </li>
             <li>
               <Link to="/home/lightbox">Lightbox</Link>
+            </li>
+            <li>
+              <Link to="/home/smoothscroll">Smooth Scroll</Link>
+            </li>
+            <li>
+              <Link to="/home/spring">Spring</Link>
+            </li>
+            <li>
+              <Link to="/home/react-animate">React Animate</Link>
             </li>
           </ol>
         </li>

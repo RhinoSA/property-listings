@@ -1,0 +1,68 @@
+.wrapper-circles {
+  height: 60px;
+  background-color: #e8e8e8;
+  padding: 0px;
+  padding: 5px;
+  margin: 15px 0px 15px 0px;
+}
+
+.circles-03,
+.circles-02,
+.circles-01 {
+  width: 40px;
+  margin: 5px;
+  stroke: none;
+  padding: 0px;
+  position: relative;
+  top: -30px;
+}
+
+.circleshape-outer {
+  fill: #533869;
+  stroke: none;
+}
+
+/* #### CHANGING INNER ELEMENTS
+/* #### This does not work
+targeting the inner box #### */
+
+.circles-01 {
+  fill: #1b61a3;
+  stroke: none;
+}
+
+/* #### THE TRICK #### */
+
+.circles-02 {
+  fill: #cc8324;
+}
+.circles-02 .circleshape-inner {
+  fill: currentColor;
+}
+
+.circles-03 {
+  fill: #831ba3;
+}
+.circles-03 .circleshape-inner {
+  fill: currentColor;
+}
+
+/* #### SQUARES #### */
+
+.squares-box {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -55px;
+  margin: 5px;
+}
+
+.squares-outer {
+  fill: #533869;
+  stroke: none;
+}
+
+.squares-inner {
+  fill: #1b61a3;
+  stroke: none;
+}

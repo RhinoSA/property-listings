@@ -1,4 +1,5 @@
 import React from "react";
+import mammals from "../../mammaldata";
 
 export const ProModeContext = React.createContext({
   heading: "Todo List",
@@ -9,5 +10,6 @@ export const ProModeContext = React.createContext({
     { id: 4, action: "Wash the car", done: false }
   ],
   proMode: false,
+  mammals: mammals,
   toggleProMode: () => {}
 });

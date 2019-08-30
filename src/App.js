@@ -15,7 +15,6 @@ import Bootstrap from "./components/pages/bootstrap";
 import Default from "./components/pages/default";
 //import Axios from "./components/pages/axios";
 import ToDo from "./components/pages/todo";
-import JavaScript from "./components/pages/javascript";
 // PROPERTY SEARCH
 import Rooms from "./components/pages/rooms";
 import SingleRoom from "./components/pages/singleroom";
@@ -35,8 +34,6 @@ import Strings from "./sections/javascript/strings";
 import Arrays from "./sections/javascript/arrays";
 import Conditionals from "./sections/javascript/conditionals";
 import Operators from "./sections/javascript/operators";
-import Replace from "./sections/javascript/replace";
-import Loops from "./sections/javascript/loops";
 import Modules from "./sections/javascript/modules";
 import HOCBasics from "./sections/components/basics";
 import ComponentsHome from "./sections/components/components";
@@ -61,6 +58,18 @@ import CssSwitch from "./sections/extras/cssswitch";
 import AnimateOnScroll from "./sections/extras/animateonscroll";
 import ReactMotion from "./sections/extras/reactmotion";
 import GridGallery from "./sections/extras/lightbox";
+import SmoothScroll from "./sections/extras/smoothscroll";
+import Springs from "./sections/extras/springs";
+import ReactAnimate from "./sections/extras/reactanimate";
+import StateFromProps from "./sections/props/statefromprops";
+import Lifecycle from "./sections/lifecycle/lifecycle";
+import Objects from "./sections/javascript/objects";
+import Promises from "./sections/javascript/promises";
+import Reordering from "./sections/lists/reordering";
+import SnapSVG from "./sections/extras/snap/snap";
+
+// CONTEXT EXAMPLE
+import Animal from "./sections/context/components/Animal";
 
 class App extends Component {
   constructor() {
@@ -86,14 +95,19 @@ class App extends Component {
             <Route exact path="/home/arrays" component={Arrays} />
             <Route exact path="/home/conditionals" component={Conditionals} />
             <Route exact path="/home/operators" component={Operators} />
-            <Route exact path="/home/replace" component={Replace} />
             <Route exact path="/home/modules" component={Modules} />
-            <Route exact path="/home/loops" component={Loops} />
             <Route exact path="/home/events" component={Events} />
             <Route exact path="/home/functionprops" component={FunctionProps} />
             <Route exact path="/home/props-basics" component={PropsBasics} />
             <Route exact path="/home/defaultprops" component={DefaultProps} />
             <Route exact path="/home/proptypes" component={PropTypes} />
+            <Route exact path="/home/objects" component={Objects} />
+            <Route exact path="/home/promises" component={Promises} />
+            <Route
+              exact
+              path="/home/state-from-props"
+              component={StateFromProps}
+            />
             <Route exact path="/home/hoc-basics" component={HOCBasics} />
             <Route exact path="/home/components" component={ComponentsHome} />
             <Route exact path="/home/children-prop" component={ChildrenProp} />
@@ -106,6 +120,12 @@ class App extends Component {
             <Route exact path="/home/css-switch" component={CssSwitch} />
             <Route exact path="/home/react-motion" component={ReactMotion} />
             <Route exact path="/home/lightbox" component={GridGallery} />
+            <Route exact path="/home/smoothscroll" component={SmoothScroll} />
+            <Route exact path="/home/spring" component={Springs} />
+            <Route exact path="/home/react-animate" component={ReactAnimate} />
+            <Route exact path="/home/lifecycle" component={Lifecycle} />
+            <Route exact path="/home/reordering" component={Reordering} />
+            <Route exact path="/home/snap" component={SnapSVG} />
             <Route
               exact
               path="/home/animate-on-scroll"
@@ -136,7 +156,6 @@ class App extends Component {
             <Route path="/links" component={Links} />
             {/*<Route path="/axios" component={Axios} />*/}
             <Route path="/todo" component={ToDo} />
-            <Route path="/javascript" component={JavaScript} />
             {/*<Route exact path="/" component={Home} />*/}
             <Route path="/Shop" component={Shop} />
             <Route path="/details" component={Details} />
@@ -149,7 +168,7 @@ class App extends Component {
             <Route exact path="/mammals/:slug" component={SingleMammal} />
             <Route exact path="/order/:slug" component={SingleMammal} />
             {/*<Route path="/error" component={Error} />*/}
-            {/* AXIOS */}
+            <Route exact path="/animal/:slug" component={Animal} />
             {/*<Route exact path="/:post_id" component={AxiosPost} />*/}
             {/*<Route component={Default} />*/}
             <Route component={Default} />

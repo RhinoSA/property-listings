@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../modules/navbar/navbar";
 import Menu from "../../sections/menu";
-import Services from "../modules/services";
 import FeaturedRooms from "./featuredrooms";
 import Photo from "../../images/lion.jpg";
 
@@ -21,6 +20,34 @@ class Home extends Component {
             </div>
             <div className="col-md-9">
               <h1>React Basics</h1>
+              <h2>To Refine</h2>
+              <ol>
+                <li>Higher-Order Components</li>
+                <li>Reordering Lists</li>
+                <li>Setting State from Props</li>
+                <li>Function Props</li>
+                <li>Hooks</li>
+                <li>React Router Tabs</li>
+                <li>Reconcilliation &amp; Lifecycles</li>
+                <li>Redux</li>
+                <li>User Login</li>
+                <li>Styled Components</li>
+                <li>Deployment</li>
+              </ol>
+              <hr />
+              <h2>Book Source Code GitHub</h2>
+              <p>
+                To access the files used in the book, click on the button below:
+              </p>
+              <p>
+                <a
+                  href="https://github.com/Apress/pro-react-16"
+                  target="github"
+                  className="btn btn-secondary mb-2"
+                >
+                  Pro React 16 - GitHub
+                </a>
+              </p>
               <h2>Importing Images</h2>
               <div
                 style={{
@@ -43,6 +70,19 @@ class Home extends Component {
               <p className="alert alert-secondary">
                 &lt;img className="img-fluid" src=&#123;Photo&#125; alt="banner"
                 /&gt;
+              </p>
+              <h2>Using Static Content</h2>
+              <p>
+                One can use the "src" folder for static content, but if you want
+                to put your static content in the "public" folder and access it
+                inside your components you can use the following code:
+              </p>
+              <p className="alert alert-secondary">
+                &lt;link rel="stylesheet" href=&#123;process.env.PUBLIC_URL +
+                "/static.css"&#125; /&gt;
+                <br />
+                &lt;img src=&#123; process.env.PUBLIC_URL + "logo.png" &#125;
+                alt="logo" /&gt;
               </p>
               <h2>Loading React Directly</h2>
               <p>
@@ -172,9 +212,8 @@ class Home extends Component {
               </p>
             </div>
           </div>
+          <FeaturedRooms />
         </div>
-        <Services />
-        <FeaturedRooms />
       </React.Fragment>
     );
   }

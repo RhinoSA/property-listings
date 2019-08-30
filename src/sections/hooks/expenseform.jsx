@@ -11,30 +11,31 @@ const ExpenseForm = ({
 }) => {
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Budget Calculator</h2>
       <div className="row">
-          <div className="form-group col-md-6">
-            <label htmlFor="expense">Charge</label>
-            <input
-              type="text"
-              className="form-control"
-              id="charge"
-              name="charge"
-              placeholder="e.g. rent"
-              value={charge}
-              onChange={handleCharge}
-            />
-          </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="amount">Amount</label>
-            <input
-              type="number"
-              className="form-control"
-              id="amount"
-              name="amount"
-              placeholder="e.g. 100"
-              value={amount}
-              onChange={handleAmount}
-            />
+        <div className="form-group col-md-6">
+          <label htmlFor="expense">Charge</label>
+          <input
+            type="text"
+            className="form-control"
+            id="charge"
+            name="charge"
+            placeholder="e.g. rent"
+            value={charge}
+            onChange={handleCharge}
+          />
+        </div>
+        <div className="form-group col-md-6">
+          <label htmlFor="amount">Amount</label>
+          <input
+            type="number"
+            className="form-control"
+            id="amount"
+            name="amount"
+            placeholder="e.g. 100"
+            value={amount}
+            onChange={handleAmount}
+          />
         </div>
       </div>
       <button className="btn btn-secondary" type="submit">

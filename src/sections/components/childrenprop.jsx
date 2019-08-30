@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Menu from "../menu";
 import MessageSimple from "./messagesimple";
 import MessageFancy from "./messagefancy";
+import Lists from "./lists";
 
 class ChildrenProp extends Component {
   state = {};
@@ -18,7 +19,8 @@ class ChildrenProp extends Component {
             <Menu />
           </div>
           <div className="col-md-9">
-            <h1>The Children Prop</h1>
+            <h1>Specialized Components</h1>
+            <h2>Using the Children Prop</h2>
             <h4>A Simple Application</h4>
             <MessageSimple
               message={`Counter: ${this.state.counter}`}
@@ -470,6 +472,205 @@ class ChildrenProp extends Component {
               and the theme switching selector. What this demonstrates is how
               one can combine components into a more complex component using the
               children props feature of React.
+            </p>
+            <h2>Specialized Components</h2>
+            <p>
+              Some components provide specialized versions of the features
+              provided by another, more general, component. React relies on the
+              specialized component rendering the more general component and
+              managing the behaviour via props. In the example below there are
+              two list of names, the one on the left is a simple component which
+              outputs the list of names, and on the right there is a more
+              specialized version of the same list which one can sort
+              alphabetically by clicking on the "Sort" button. Both of the lists
+              are rendered using the same component, but the one which is
+              sortable is customized.
+            </p>
+            <Lists />
+            <p>
+              The above example uses three components, the main component, named
+              "List", uses the following code:
+            </p>
+            <p className="alert alert-secondary">
+              import React, &#123; Component &#125; from "react";
+              <br />
+              import &#123; GeneralList &#125; from "./generallist";
+              <br />
+              import &#123; SortedList &#125; from "./sortedlist";
+              <br />
+              <br />
+              class Lists extends Component &#123;
+              <br />
+              &nbsp;&nbsp;constructor(props) &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;super(props);
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;this.state = &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list: ["Zoe", "Bob", "Alice",
+              "Dora", "Joe", "John"]
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+              <br />
+              &nbsp;&nbsp;&#125;
+              <br />
+              &nbsp;&nbsp;render() &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div className="row"&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+              className="col-6"&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&gt;List
+              of Names&lt;/h4&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;GeneralList
+              theme="secondary" list=&#123;this.state.list&#125; /&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+              className="col-6"&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&gt;Sortable
+              List of Names&lt;/h4&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SortedList
+              theme="info" list=&#123;this.state.list&#125; /&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;);
+              <br />
+              &nbsp;&nbsp;&#125;
+              <br />
+              &#125;
+              <br />
+              <br />
+              export default Lists;
+            </p>
+            <p>
+              The component that generates the list of names, which is called
+              GeneralList, uses the following code:
+            </p>
+            <p className="alert alert-secondary">
+              import React, &#123; Component &#125; from "react";
+              <br />
+              <br />
+              export class GeneralList extends Component &#123;
+              <br />
+              &nbsp;&nbsp;render() &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+              className=&#123;`bg-&#36;{/**/}&#123;this.props.theme&#125;
+              text-white p-2`&#125;&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;this.props.list.map((item,
+              index) =&gt; (<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+              key=&#123;item&#125;&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;index
+              + 1&#125;: &#123;item&#125;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;))&#125;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;);
+              <br />
+              &nbsp;&nbsp;&#125;
+              <br />
+              &#125;
+            </p>
+            <p>
+              Then lastly, we create the specialized component which adds the
+              option to be able to sort the list alphabetically. This component
+              is named SortedList and uses the following code:
+            </p>
+            <p className="alert alert-secondary">
+              import React, &#123; Component &#125; from "react";
+              <br />
+              import &#123; GeneralList &#125; from "./generallist";
+              <br />
+              import &#123; ActionButton &#125; from "./actionbutton";
+              <br />
+              import &#123; ErrorBoundary &#125; from "./errorboundary";
+              <br />
+              <br />
+              export class SortedList extends Component &#123;
+              <br />
+              &nbsp;&nbsp;constructor(props) &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;super(props);
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;this.state = &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sort: false
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+              <br />
+              &nbsp;&nbsp;&#125;
+              <br />
+              <br />
+              &nbsp;&nbsp;getList() &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;return this.state.sort ?
+              [...this.props.list].sort() : this.props.list;
+              <br />
+              &nbsp;&nbsp;&#125;
+              <br />
+              <br />
+              &nbsp;&nbsp;toggleSort = () => &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;this.setState(&#123; sort:
+              !this.state.sort &#125;);
+              <br />
+              &nbsp;&nbsp;&#125;;
+              <br />
+              <br />
+              &nbsp;&nbsp;render() &#123;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ErrorBoundary&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;GeneralList
+              list=&#123;this.getList()&#125; theme="info" /&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div
+              className="text-center m-2"&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ActionButton
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theme="secondary"
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text="Sort"
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proMode=&#123;this.props.proMode&#125;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback=&#123;this.toggleSort&#125;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ErrorBoundary&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;);
+              <br />
+              &nbsp;&nbsp;&#125;
+              <br />
+              &#125;
             </p>
           </div>
         </div>

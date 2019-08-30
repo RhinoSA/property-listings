@@ -1,0 +1,360 @@
+.animate-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(155, 178, 80, 1);
+  border-radius: 25px;
+  padding: 2px 15px 5px 15px;
+  color: #fff;
+  font-size: 28px;
+  height: 50px;
+  text-align: center;
+  margin: 15px 0px 0px 15px;
+  -webkit-transition: opacity 1s; /* Safari prior 6.1 */
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.animate-box.active {
+  opacity: 1;
+}
+
+.box.hide {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(155, 178, 80, 1);
+  border-radius: 25px;
+  padding: 2px 15px 5px 15px;
+  color: #fff;
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: -80px 0px 0px 15px;
+  z-index: 100;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+  opacity: 1;
+}
+
+.box.show {
+  margin: 600px 0px 0px 15px;
+  transition-duration: 8s;
+  background-color: rgb(10, 10, 10);
+  height: 50;
+  width: 50;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+  padding: 2px 15px 5px 15px;
+  color: #fff;
+  font-size: 28px;
+  text-align: center;
+  z-index: 200;
+  opacity: 0;
+}
+
+.blipper-stage {
+  background-color: rgba(112, 128, 63, 1);
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  margin: 15px 0px 15px 0px;
+  animation: animateBack 15s infinite ease-in-out;
+}
+
+@keyframes animateBack {
+  0% {
+    background-color: rgba(155, 178, 80, 1);
+  }
+  20% {
+    background-color: rgba(112, 128, 63, 1);
+  }
+  80% {
+    background-color: rgba(112, 128, 63, 1);
+  }
+  90% {
+    background-color: rgba(155, 178, 80, 1);
+  }
+  100% {
+    background-color: rgba(155, 178, 80, 1);
+  }
+}
+
+.letters {
+  position: relative;
+  top: -240px;
+  left: 15px;
+}
+
+.letter-b {
+  fill: #fff;
+  position: relative;
+  animation: animateLetters 6s infinite alternate ease-in-out;
+  z-index: 10;
+  animation-delay: 1s;
+  transform: scale(0.6);
+}
+
+.letter-l {
+  fill: #fff;
+  position: relative;
+  animation: animateLetters 6s infinite alternate ease-in-out;
+  z-index: 10;
+  animation-delay: 1.2s;
+  transform: scale(0.6);
+}
+
+.letter-i {
+  fill: #fff;
+  position: relative;
+  animation: animateLetters 6s infinite alternate ease-in-out;
+  z-index: 10;
+  animation-delay: 1.4s;
+  transform: scale(0.6);
+}
+
+.letter-p {
+  fill: #fff;
+  position: absolute;
+  animation: animateLetters 6s infinite alternate ease-in-out;
+  z-index: 10;
+  animation-delay: 1.5s;
+  transform: scale(0.6);
+}
+
+@keyframes animateLetters {
+  0% {
+    top: 0px;
+    opacity: 0;
+  }
+  20% {
+    top: 325px;
+    opacity: 1;
+  }
+  80% {
+    top: 325px;
+    opacity: 1;
+  }
+  100% {
+    top: 325px;
+    opacity: 0;
+  }
+}
+
+.blipper-stage {
+  background-color: rgba(112, 128, 63, 1);
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  margin: 15px 0px 15px 0px;
+}
+
+.wrapper {
+  width: 342px;
+  background-color: transparent;
+  height: 450px;
+  display: inline-block;
+  margin: 0;
+  position: absolute;
+  z-index: 200;
+  transform: scale(0.8);
+  /*animation: scaleBlipper 7s infinite ease-in-out;*/
+}
+
+@keyframes scaleBlipper {
+  0% {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.6);
+  }
+}
+
+.hills {
+  display: inline-block;
+  width: 9000px;
+  height: 399.21px;
+  overflow: hidden;
+  position: relative;
+  left: 0px;
+  bottom: -150px;
+  animation: moveHills 30s infinite ease-in-out;
+}
+
+@keyframes moveHills {
+  0% {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(-4500px, 0px);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-8000px, 0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-8200px, 0px);
+    opacity: 0;
+  }
+}
+
+.blipper {
+  width: 360px;
+  position: absolute;
+  display: inline-block;
+  left: -25px;
+  bottom: 100px;
+  cursor: pointer;
+  animation: moveBlipper 5s infinite ease-in-out;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+  transform: scale(0.6);
+}
+
+@keyframes moveBlipper {
+  0% {
+    transform: translate(-400px);
+  }
+  40% {
+    transform: translate(320px);
+  }
+  100% {
+    transform: translate(1300px);
+  }
+}
+
+.blipper:hover {
+  transform: scale(1.03);
+  left: -20px;
+  bottom: 110px;
+}
+
+.wrapper .blipper-shadow {
+  display: inline-block;
+  position: relative;
+  bottom: -110px;
+  left: -30px;
+  width: 340px;
+  height: 100%;
+  opacity: 0.3;
+  animation: moveBlipper 5s infinite ease-in-out;
+}
+
+.shadow-shape {
+  position: absolute;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.2);
+  left: 0px;
+  bottom: 0px;
+  transform: scale(0.9);
+}
+
+.blip-outline {
+  fill: #fff;
+}
+
+.blip-star {
+  fill: #fff;
+}
+
+.blip-black {
+  background-color: #000;
+}
+
+.blip-brass-01 {
+  fill: #ad9168;
+}
+
+.blip-brass-02 {
+  fill: #a18658;
+}
+
+.blip-brass-03 {
+  fill: #7f6845;
+}
+
+.blip-brass-04 {
+  fill: #bba176;
+}
+
+.blip-brass-05 {
+  fill: #231f20;
+}
+
+.blip-brass-06 {
+  fill: #e4d1a7;
+}
+
+.blip-brass-07 {
+  fill: #231f20;
+}
+
+.blip-green-01 {
+  fill: #758f35;
+}
+
+.blip-green-02 {
+  fill: #9bb250;
+}
+
+.blip-green-03 {
+  fill: #c9da91;
+}
+
+.blip-green-04 {
+  fill: #b4ce5f;
+}
+
+/* ########## SCREEN ########## */
+
+.blipper .screen-green-01 {
+  fill: #758f35;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+}
+
+.blipper:hover .screen-green-01 {
+  fill: #85a041;
+}
+
+.blipper .blip-green-02 {
+  fill: #9bb250;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+}
+
+.blipper:hover .blip-green-02 {
+  fill: #abc262;
+}
+
+.blipper .blip-green-03 {
+  fill: #c9da91;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+}
+
+.blipper:hover .blip-green-03 {
+  fill: #cee092;
+}
+
+.blipper .blip-green-04 {
+  fill: #b4ce5f;
+  -webkit-transition: all 1s; /* Safari prior 6.1 */
+  transition: all 1s ease-in-out;
+}
+
+.blipper:hover .blip-green-04 {
+  fill: #c5dd75;
+}

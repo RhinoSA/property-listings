@@ -13,15 +13,19 @@ import { RoomProvider } from "./contextrooms";
 
 import { MammalProvider } from "./contextmammals";
 
+import { MammalsProvider } from "./sections/context/context/MammalsContext";
+
 import App from "./App";
 
 ReactDOM.render(
   <ProductProvider>
     <RoomProvider>
       <MammalProvider>
-        <Router>
-          <App />
-        </Router>
+        <MammalsProvider>
+          <Router>
+            <App />
+          </Router>
+        </MammalsProvider>
       </MammalProvider>
     </RoomProvider>
   </ProductProvider>,

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { ProModeContext } from "./promodecontext";
-console.log(ProModeContext);
 
 class ConsumeContext extends Component {
   render() {

@@ -1,0 +1,59 @@
+:root {
+  --wafColor: rgb(54, 110, 156);
+  --wafColorHover: rgb(143, 157, 161);
+  --wafRhino: rgb(148, 158, 160);
+  --wafRhinoHover: rgb(184, 196, 199);
+}
+
+.waf-wrap .waf-name {
+  fill: var(--wafColor);
+  -webkit-transition: fill 0.5s, background-color 1s;
+  transition: fill 0.5s, background-color 1s;
+  transform: scale(0.95);
+  width: 100%;
+}
+
+.waf-wrap:hover .waf-name {
+  fill: var(--wafColorHover);
+}
+
+.waf-wrap {
+  display: inline-block;
+  width: 250px;
+  margin: 15px 0px 15px 0px;
+  cursor: pointer;
+}
+
+.waf-logo {
+  cursor: pointer;
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+  -webkit-transition: fill 0.5s, background-color 1s;
+  transition: fill 0.5s, background-color 1s;
+}
+
+/* Wild Africa Foundation */
+.waf-wrap .letters {
+  fill: var(--wafColor);
+  -webkit-transition: fill 0.5s, background-color 1s;
+  transition: fill 0.5s, background-color 1s;
+}
+
+.waf-wrap:hover .letters {
+  fill: var(--wafColorHover);
+  -webkit-transition: fill 0.5s, background-color 1s;
+  transition: fill 0.5s, background-color 1s;
+}
+
+/* RHINO */
+.waf-wrap .rhino {
+  fill: var(--wafRhino);
+  -webkit-transition: fill 0.5s, background-color 1s;
+  transition: fill 0.5s, background-color 1s;
+}
+
+.waf-wrap:hover .rhino {
+  fill: var(--wafRhinoHover);
+  -webkit-transition: fill 0.5s, background-color 1s;
+  transition: fill 0.5s, background-color 1s;
+}
