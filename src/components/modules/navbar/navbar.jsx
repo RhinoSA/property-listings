@@ -4,6 +4,7 @@ import NavToggle from "./navtoggle";
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import $ from "jquery";
+/* Force Update */
 
 $(document).on(
   "click",
