@@ -3,6 +3,7 @@ import Navbar from "../modules/navbar/navbar";
 import Menu from "../../sections/menu";
 import FeaturedRooms from "./featuredrooms";
 import Photo from "../../images/lion.jpg";
+import { TimelineMax, TweenMax } from "gsap/all";
 
 /* ########## BLIP ########## */
 import "../../sections/extras/svg/blip/blip.css";
@@ -17,15 +18,48 @@ import CogBlue05 from "../../sections/extras/svg/blip/cog-blue-05";
 import CogBlue06 from "../../sections/extras/svg/blip/cog-blue-06";
 import CogBlue07 from "../../sections/extras/svg/blip/cog-blue-07";
 import CogBlue08 from "../../sections/extras/svg/blip/cog-blue-08";
+import CogBlue09 from "../../sections/extras/svg/blip/cog-blue-09";
 import BlipDraw from "../../sections/extras/svg/blip/blip-draw";
 import LetterB from "../../sections/extras/svg/blip/letterB";
 import LetterL from "../../sections/extras/svg/blip/letterL";
 import LetterI from "../../sections/extras/svg/blip/letterI";
 import LetterP from "../../sections/extras/svg/blip/letterP";
+import BlipMenu from "../../sections/extras/svg/blip/blip-menu";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.bezierBlip = new TweenMax({ paused: false });
+    this.blipScale = new TimelineMax({ paused: false });
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.blipScale = new TimelineMax({
+      paused: false,
+      delay: 1
+    })
+      .set(this.blipScale, {
+        scale: 0.5
+      })
+      .to(this.blipScale, 3, {
+        scale: 1.2
+      });
+    this.besierBlip = new TweenMax(this.blipFly, 3, {
+      delay: 1,
+      bezier: {
+        type: "soft",
+        curviness: 1,
+        values: [
+          { x: -150, y: 0 },
+          { x: 400, y: 120 },
+          { x: 1000, y: 130 },
+          { x: 1600, y: 80 }
+        ],
+        autoRotate: false
+      },
+      ease: "Power0.easeOut"
+    });
   }
 
   render() {
@@ -36,9 +70,31 @@ class Home extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="blip-draw-stage">
+                <BlipMenu />
                 <div className="blip-blue-wrapper">
-                  <BlueBlip />
-                  <BlueShadow />
+                  <div
+                    ref={div => (this.blipFly = div)}
+                    style={{
+                      width: 170,
+                      position: "absolute",
+                      left: -150,
+                      top: 0
+                    }}
+                  >
+                    <div
+                      ref={div => (this.blipScale = div)}
+                      className="blip-blue-outer"
+                      style={{
+                        width: 170,
+                        position: "absolute",
+                        left: -150,
+                        top: 0
+                      }}
+                    >
+                      <BlueBlip />
+                      <BlueShadow />
+                    </div>
+                  </div>
                 </div>
                 <div className="blip-blue-text">
                   <LetterB />
@@ -58,6 +114,7 @@ class Home extends Component {
                   <CogBlue06 />
                   <CogBlue07 />
                   <CogBlue08 />
+                  <CogBlue09 />
                 </div>
               </div>
             </div>

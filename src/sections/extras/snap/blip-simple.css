@@ -1,0 +1,476 @@
+.mask {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #262626 30%,
+    #262626
+  );
+}
+
+/* ########## GSAP Modal ########## */
+
+.modal {
+  background-color: rgba(30, 30, 30, 0.75);
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal .modal-dialog {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-content {
+  color: #333;
+}
+
+/* ########## Card Transition ########## */
+
+.card-container {
+  transform: translateY(25px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.transition-card {
+  transform: translateX(100px);
+  opacity: 0;
+  visibility: hidden;
+  background-color: #73b102;
+  color: #fff;
+  padding: 0px;
+}
+
+.transition-card .card-body {
+  background-color: #73b102;
+  color: #fff;
+}
+
+.transition-card.simple {
+  transform: translateX(100px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.transition-card h4 {
+  margin: 10px 0;
+}
+
+button.close {
+  color: #fff;
+  opacity: 1;
+}
+
+button.close:hover,
+button.close:focus {
+  color: #003b03;
+}
+
+.card-element {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.subhead {
+  font-size: 20px;
+  width: 100%;
+  display: inline-block;
+}
+
+.demo-wrapper {
+  width: 100%;
+  height: 460px;
+  color: black;
+  overflow: hidden;
+  position: relative;
+  background-color: #333;
+  padding-top: 10px;
+  margin-top: 15px;
+}
+
+.content-demo {
+  padding-left: 15px;
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.content-demo h1,
+.content-demo h2 {
+  color: #fff !important;
+}
+
+.infobox-demowrapper {
+  margin-top: 50px;
+  height: 400px;
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 40px;
+}
+
+.feature {
+  position: absolute;
+  width: 220px;
+  top: -10px;
+}
+
+.descriptionbox {
+  position: absolute;
+  left: 0;
+  margin-left: 260px;
+  width: 240px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  text-transform: none;
+}
+
+.navicons-wrap {
+  position: absolute;
+  white-space: nowrap;
+  left: 20px;
+  bottom: 20px;
+}
+
+.navicons-wrap img {
+  display: inline-block;
+  margin-right: 15px;
+  float: left;
+}
+
+.gsap-btn {
+  background-color: #73b102;
+  color: #fff;
+}
+
+.gsap-btn:hover,
+.gsap-btn:active,
+.gsap-btn:focus {
+  background-color: #88ce02;
+}
+
+/* Body Parts */
+
+.blip-simple {
+  width: 100%;
+}
+.b-screen-back {
+  fill: rgba(250, 250, 250, 0.3);
+}
+
+.b-screen {
+  display: block;
+  cursor: pointer;
+}
+
+.blip-body {
+  display: block;
+}
+
+.antenna-right {
+  cursor: pointer;
+  display: block;
+}
+
+.antenna-arm-right {
+  display: block;
+}
+
+.antenna-left {
+  cursor: pointer;
+  display: block;
+}
+
+.antenna-arm-left {
+  display: block;
+}
+
+.blip-button-01 {
+  cursor: pointer;
+  display: block;
+}
+
+.blip-button-02 {
+  cursor: pointer;
+  display: block;
+}
+
+.blip-button-03 {
+  cursor: pointer;
+  display: block;
+}
+
+/* ########## Colours ########## */
+
+/* Screen Colours */
+
+.b-screen-dark {
+  fill: #33627d;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.b-screen-medium {
+  fill: #3b768e;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.b-screen-light {
+  fill: #569cb1;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.b-screen-lighter {
+  fill: #6fb9d3;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.b-screen-lightest {
+  fill: #94cad9;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+/* Blue Colours */
+
+.b-blue-01 {
+  fill: #97c4f0;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.b-blue-02 {
+  fill: #519ddb;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.b-blue-03 {
+  fill: #3f91cf;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.b-blue-04 {
+  fill: #3384c8;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.b-blue-05 {
+  fill: #1c70b0;
+  stroke: none;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.b-blue-06 {
+  fill: #b0521c;
+  stroke: none;
+}
+
+/* Outer White */
+
+.b-outer-white {
+  fill: rgb(255, 255, 255);
+}
+
+/* Star */
+
+.star-shape {
+  fill: #fff;
+}
+
+/* Black Outlines */
+
+.b-black-outlines {
+  fill: #000;
+}
+
+.b-back-white {
+  fill: #fff;
+}
+
+/* Unidentified */
+
+.b-green-01 {
+  fill: #6a7c5f;
+}
+
+/* ########## Hover Colours Screen ########## */
+
+.b-screen:hover .b-screen-lightest {
+  fill: #addce9;
+}
+
+.b-screen:hover .b-screen-lighter {
+  fill: #91d4ec;
+}
+
+.b-screen:hover .b-screen-light {
+  fill: #76c0d6;
+}
+
+.b-screen:hover .b-screen-medium {
+  fill: #4c8da7;
+}
+
+.b-screen:hover .b-screen-dark {
+  fill: #3e6f8b;
+}
+
+/* ########## Hover Colours Antennae ########## */
+
+.antenna-right:hover .b-blue-05,
+.antenna-left:hover .b-blue-05 {
+  fill: #2881c5;
+}
+
+.antenna-right:hover .b-blue-04,
+.antenna-left:hover .b-blue-04 {
+  fill: #3f91d4;
+}
+
+.antenna-right:hover .b-blue-03,
+.antenna-left:hover .b-blue-03 {
+  fill: #4e9fdd;
+}
+
+.antenna-right:hover .b-blue-02,
+.antenna-left:hover .b-blue-02 {
+  fill: #5aa5e2;
+}
+
+.antenna-right:hover .b-blue-01,
+.antenna-left:hover .b-blue-01 {
+  fill: #b8dafc;
+}
+
+/* ########## Hover Colours Buttons ########## */
+
+.blip-button-01:hover .b-blue-02,
+.blip-button-02:hover .b-blue-02,
+.blip-button-03:hover .b-blue-02 {
+  fill: #74b6ec;
+}
+
+.blip-button-01:hover .b-blue-04,
+.blip-button-02:hover .b-blue-04,
+.blip-button-03:hover .b-blue-04 {
+  fill: #4395d8;
+}
+
+.blip-button-01:hover .b-blue-01,
+.blip-button-02:hover .b-blue-01,
+.blip-button-03:hover .b-blue-01 {
+  fill: #b9dafc;
+}
+
+.blip-button-01.active .b-blue-02,
+.blip-button-02.active .b-blue-02,
+.blip-button-03.active .b-blue-02 {
+  fill: #91c6f1;
+}
+
+.blip-button-01.active .b-blue-04,
+.blip-button-02.active .b-blue-04,
+.blip-button-03.active .b-blue-04 {
+  fill: #57a4e4;
+}
+
+.blip-button-01.active .b-blue-01,
+.blip-button-02.active .b-blue-01,
+.blip-button-03.active .b-blue-01 {
+  fill: #b9dafc;
+}
+
+/* ########## Animated Outline ########## */
+
+/* ###### Outlines ###### */
+
+.blip-blue-simple {
+  width: 200px;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+}
+
+/*
+  
+  CSS ANIMATIONS:
+  
+  animation-name: AnimationName
+  
+  @keyframes AnimationName {
+      from {background-color: #fff;}
+      to {background-color: #000;}
+  }
+  
+  @keyframes AnimationName {
+      0% {background-color: #fff;}
+      50% {background-color: #333;}
+      100% {background-color: #000;}
+  }
+  
+  animation-duration: 4s
+  animation-delay: 4s
+  animation-iteration-count: 2
+  animation-direction: forward, reverse, alternate, alternate-reverse
+  animation-timing-function: linear, ease, ease-in, ease-out, ease-in-out
+  
+  animation-fill-mode: none, forwards, backwards, both
+  
+  animation-fill-mode: none:
+    Animation will not apply any styles to the element before or after it is executing
+  animation-fill-mode: forwards:
+    The element will retain the style values that is set by the last keyframe
+    (depends on animation-direction and animation-iteration-count)
+  animation-fill-mode: forwards:
+    The element will get the style values that is set by the first keyframe
+    (depends on animation-direction), and retain this during the animation-delay period
+  animation-fill-mode: both:
+    The animation will follow the rules for both forwards and backwards,
+    extending the animation properties in both directions
+  Shorthand Animation Declaration:
+  div {
+    animation: example 5s linear 2s infinite alternate;
+  }
+  
+  animation-play-state: running or paused;
+  
+  CSS TRANSITIONS:
+  
+  -webkit-transition: width 2s, opacity: 2s;
+  transition: width 2s, opacity: 2s;
+  transition-timing-function: linear, ease, ease-in, ease-out and ease-in-out;
+  transition-delay: 1s;
+  
+  COMBINING TRANSFORM & TRANSITION:
+  
+  div {
+    transition: width 2s, height 2s, transform 2s;
+  }
+  
+  */
+
+/*
+  -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+  */

@@ -1,4 +1,647 @@
+/* ########## Carousel ##########*/
+
+.carousel-mask {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  z-index: 250;
+  background-color: #fff;
+  width: 15px;
+  height: 160px;
+}
+
+.info-slide {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 200;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 1);
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  -webkit-transition: width 1s, height 1s; /* Safari prior 6.1 */
+  transition: width 1s, height 1s;
+  cursor: pointer;
+}
+
+.info-slide span {
+  position: relative;
+  top: -3px;
+  right: -5px;
+  font-size: 16px;
+}
+
+.info-slide p {
+  position: absolute;
+  background-color: #333;
+  display: block;
+  width: 200px;
+  right: -200px;
+  top: 0px;
+  -webkit-transition: right 1s, opacity 0.5s; /* Safari prior 6.1 */
+  transition: right 1s, opacity 0.5s;
+  border-radius: 0px;
+}
+
+.info-slide:hover p {
+  right: 0px;
+}
+
+.info-slide p {
+  padding: 15px;
+}
+
+.carousel-portfolio-wrap {
+  width: 700px !important;
+}
+
+#portfolio .carousel-item {
+  margin-top: 10px;
+  position: relative;
+}
+
+#portfolio .carousel-indicators {
+  bottom: -88px;
+}
+
+#portfolio .carousel-indicators li {
+  display: none;
+  position: relative;
+  text-indent: 0;
+}
+
+#portfolio .carousel-indicators li.active {
+  display: block;
+}
+
+#portfolio .carousel-indicators li span {
+  position: absolute;
+}
+
+#portfolio .carousel-indicators li {
+  background-color: #333;
+  width: 50px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  color: #fff !important;
+  line-height: 30px;
+  font-size: 20px;
+  padding: 0px;
+  text-align: center;
+}
+
+#portfolio .carousel-item,
+#portfolio .carousel {
+  height: 390px !important;
+  max-height: 390px !important;
+}
+
+#portfolio .carousel-item {
+  background-color: #fff;
+}
+
+#portfolio .carousel-control-next,
+#portfolio .carousel-control-prev {
+  color: #333 !important;
+  font-size: 30px;
+  width: 15%;
+  height: 305px !important;
+  top: 60px;
+  margin: 0px 0px 20px 0px;
+}
+/* ########## Portfolio ########## */
+
+.resume,
+.skills,
+.portfolio {
+  position: absolute;
+  z-index: 80;
+  width: 100%;
+  background-color: rgb(51, 97, 150);
+  height: 0px;
+  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  opacity: 0;
+}
+
+.heading-section {
+  color: #fff !important;
+  font-weight: 300 !important;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 30px;
+  position: absolute;
+  right: 0;
+  margin-right: 80px;
+  width: 270px;
+  margin-top: 3px;
+}
+
+.info-section-skills h2 {
+  color: #fff !important;
+  font-weight: 300 !important;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 20px;
+}
+
+.heading-section-skills {
+  color: #fff !important;
+  font-weight: 300 !important;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  margin-left: 30px;
+  width: 270px;
+  margin-top: 24px;
+}
+
+.info-section {
+  color: #fff !important;
+  font-weight: 300 !important;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+  margin-right: 80px;
+  width: 270px;
+  margin-top: 60px;
+}
+
+.info-section-skills {
+  color: #fff !important;
+  font-weight: 300 !important;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 16px;
+  position: absolute;
+  left: 0;
+  margin-left: 30px;
+  width: 900px;
+  margin-top: 80px;
+}
+
+.resume.hide,
+.skills.hide,
+.portfolio.hide {
+  animation: hidePortfolio 1.5s linear;
+  animation-fill-mode: both;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  overflow: hidden;
+}
+
+@keyframes hidePortfolio {
+  0% {
+    height: 100%;
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    height: 100%;
+  }
+  100% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.resume.show,
+.skills.show,
+.portfolio.show {
+  animation: showPortfolio 1.5s linear;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  overflow: hidden;
+}
+
+@keyframes showPortfolio {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  80% {
+    height: 100%;
+    opacity: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+.portfolio.show .portfolio-inner {
+  animation: fadeInPortfolio 1.5s linear;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  opacity: 0;
+  padding: 20px 80px 20px 30px;
+}
+
+@keyframes fadeInPortfolio {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.portfolio.hide .portfolio-inner {
+  animation: fadeOutPortfolio 1.5s linear;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  padding: 20px 80px 20px 30px;
+}
+
+@keyframes fadeOutPortfolio {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ########## Screen Hover ########## */
+
+.screen-highlight-outer {
+  fill: rgba(250, 250, 250, 0.1);
+}
+
+.screen-highlight-inner {
+  fill: rgba(250, 250, 250, 0.1);
+}
+
+.screen-highlight {
+  position: absolute;
+  top: 64px;
+  left: 135px;
+  width: 371px;
+  opacity: 0;
+  /* -webkit-filter: blur(10px);
+  filter: blur(10px); */
+}
+
+.screen-highlight.hide {
+  animation: screenOff 1s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+@keyframes screenOff {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.screen-highlight.show {
+  animation: screenLightUp 1s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+@keyframes screenLightUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ########## Menu ########## */
+
+.menu-slider.paused .menu-option {
+  display: block;
+  height: 0px;
+  width: 100%;
+  cursor: pointer;
+  background-color: #333;
+  margin-bottom: 1px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.menu-slider.paused .menu-option span {
+  opacity: 0;
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.menu-slider.running .menu-option span {
+  display: inline-block;
+  padding-left: 15px;
+  padding-top: 6px;
+  animation: menuTextFadeIn 1s ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+@keyframes menuTextFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu-slider.paused .menu-option span {
+  display: inline-block;
+  padding-left: 15px;
+  padding-top: 6px;
+  animation: menuTextFadeOut 1s ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+@keyframes menuTextFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.menu-slider.running .menu-option {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  overflow: hidden;
+  margin-bottom: 1px;
+  cursor: pointer;
+  -webkit-transition: background-color 1s; /* Safari prior 6.1 */
+  transition: background-color 1s;
+  animation: menuOptionExpand 1s ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+@keyframes menuOptionExpand {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 40px;
+  }
+}
+
+.menu-slider.paused .menu-option {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  overflow: hidden;
+  margin-bottom: 1px;
+  animation: menuOptionExpandCollapse 1s ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+@keyframes menuOptionExpandCollapse {
+  from {
+    height: 40px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+.menu-slider.running .menu-option:hover {
+  background-color: rgba(57, 120, 179);
+}
+
+.menu-slider.running .menu-option.active {
+  background-color: rgba(57, 120, 179);
+}
+
+.menu-slider {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(46, 90, 131, 0.6);
+  padding: 0px;
+}
+
+.menu-slider.paused {
+  animation: menuSliderIn 2s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+@keyframes menuSliderIn {
+  from {
+    right: 0px;
+    opacity: 1;
+  }
+  to {
+    right: -300px;
+    opacity: 0;
+  }
+}
+
+.menu-slider.running {
+  animation: menuSliderOut 1s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+@keyframes menuSliderOut {
+  from {
+    right: -300px;
+    opacity: 0;
+  }
+  to {
+    right: 0px;
+    opacity: 1;
+  }
+}
+
+.menu-text {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.menu-btn-wrap {
+  width: 30px;
+  height: 100%;
+  padding: 0px 0px 0px 0px;
+  position: relative;
+  margin-top: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.menu-btn-wrap .menu-btn-line-01 {
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  padding: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+
+.menu-btn-wrap.running .menu-btn-line-01 {
+  animation: rotateLine 0.5s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+.menu-btn-wrap.paused .menu-btn-line-01 {
+  animation: rotateLineReverse 0.5s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+.menu-btn-wrap.running .menu-btn-line-02 {
+  animation: rotateLine02 0.5s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+.menu-btn-wrap.paused .menu-btn-line-02 {
+  animation: rotateLine02Reverse 0.5s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+@keyframes rotateLine {
+  from {
+    transform: rotate(0deg);
+    top: 0px;
+  }
+  to {
+    transform: rotate(45deg);
+    top: 6px;
+  }
+}
+
+@keyframes rotateLineReverse {
+  from {
+    transform: rotate(45deg);
+    top: 6px;
+  }
+  to {
+    transform: rotate(0deg);
+    top: 0px;
+  }
+}
+
+.menu-btn-wrap .menu-btn-line-02 {
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  padding: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 12px;
+}
+
+@keyframes rotateLine02 {
+  from {
+    transform: rotate(0deg);
+    top: 0px;
+  }
+  to {
+    transform: rotate(-45deg);
+    top: -6px;
+  }
+}
+
+@keyframes rotateLine02Reverse {
+  from {
+    transform: rotate(-45deg);
+    top: -6px;
+  }
+  to {
+    transform: rotate(0deg);
+    top: 0px;
+  }
+}
+
+.menu-wrap {
+  position: absolute;
+  display: block;
+  right: -60px;
+  top: 0;
+  z-index: 1000;
+  animation: menuAppear 1s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 29s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  background-color: rgba(45, 93, 138, 0.7);
+  color: #fff;
+  width: 50px;
+  text-align: center;
+  padding: 5px 10px 0px 10px;
+  height: 100%;
+}
+
+@keyframes menuAppear {
+  from {
+    right: -60px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
 /* ########## Cogs ########## */
+
+#box-test {
+  width: 20px;
+  height: 20px;
+  background-color: #444;
+}
 
 .cog-blue-01 {
   position: absolute;
@@ -168,10 +811,39 @@
   }
 }
 
-/* Antenna Rollovers */
+.cog-blue-09 {
+  position: absolute;
+  top: 293px;
+  left: 876px;
+  width: 188px;
+  height: 188px;
+  margin: 15px;
+  opacity: 0.4;
+  animation: rotateCog09 15s infinite reverse linear;
+  fill: #3380be;
+}
 
-.antenna-info.left,
-.antenna-info.right {
+@keyframes rotateCog09 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ########## Antenna Rollovers ########## */
+
+.antenna-info.left.show,
+.antenna-info.right.show {
+  position: absolute;
+  white-space: nowrap;
+  animation: fadeIn 1s;
+  animation-fill-mode: both;
+}
+
+.antenna-info.left.hide,
+.antenna-info.right.hide {
   position: absolute;
   top: 0;
   left: 0;
@@ -180,13 +852,8 @@
   height: 36px;
   white-space: nowrap;
   overflow: hidden;
-  opacity: none;
   z-index: 200;
-}
-
-.antenna-info.left.show,
-.antenna-info.right.show {
-  animation: fadeIn 1s;
+  animation: fadeOut 1s;
   animation-fill-mode: both;
 }
 
@@ -205,18 +872,12 @@
   }
 }
 
-.antenna-info.left.hide,
-.antenna-info.right.hide {
-  animation: fadeOut 1s;
-  animation-fill-mode: backwards;
-}
-
 @keyframes fadeOut {
   0% {
     opacity: 1;
     width: 130px;
   }
-  50% {
+  70% {
     opacity: 0;
     width: 130px;
   }
@@ -229,11 +890,13 @@
 .antenna-info.left {
   margin-left: 140px;
   margin-top: 55px;
+  width: 0px;
 }
 
 .antenna-info.right {
   margin-left: 270px;
   margin-top: 66px;
+  width: 0px;
 }
 
 .antenna-info .arrow-outer {
@@ -580,9 +1243,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 1070.425537109375;
   stroke-dashoffset: 1070.425537109375;
-  animation: outline 4s linear;
+  animation: outline 2s linear;
   animation-fill-mode: forwards;
-  animation-delay: 14s;
+  animation-delay: 8s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -613,9 +1276,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 709.0261840820312;
   stroke-dashoffset: 709.0261840820312;
-  animation: outline-body-inner 4s linear;
+  animation: outline-body-inner 2s linear;
   animation-fill-mode: forwards;
-  animation-delay: 19s;
+  animation-delay: 11s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -638,9 +1301,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 406.02459716796875;
   stroke-dashoffset: 406.02459716796875;
-  animation: outline-screen-outer 3s linear;
+  animation: outline-screen-outer 1.5s linear;
   animation-fill-mode: forwards;
-  animation-delay: 23s;
+  animation-delay: 13s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -663,9 +1326,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 357.6401062011719;
   stroke-dashoffset: 357.6401062011719;
-  animation: outline-screen-inner 3s linear;
+  animation: outline-screen-inner 1.5s linear;
   animation-fill-mode: forwards;
-  animation-delay: 26s;
+  animation-delay: 14.5s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -690,7 +1353,7 @@
   stroke-dashoffset: 183.62933349609375;
   animation: outline-antenna-ball-left 1s linear;
   animation-fill-mode: forwards;
-  animation-delay: 29s;
+  animation-delay: 16s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -715,7 +1378,7 @@
   stroke-dashoffset: 173.31631469726562;
   animation: outline-antenna-ball-right 1s linear;
   animation-fill-mode: forwards;
-  animation-delay: 30s;
+  animation-delay: 17s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -738,9 +1401,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 156.68515014648438;
   stroke-dashoffset: 156.68515014648438;
-  animation: outline-antenna-arm-left 1.5s linear;
+  animation: outline-antenna-arm-left 1s linear;
   animation-fill-mode: forwards;
-  animation-delay: 31s;
+  animation-delay: 18s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -763,9 +1426,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 78.77105712890625;
   stroke-dashoffset: 78.77105712890625;
-  animation: outline-antenna-arm-right 1s linear;
+  animation: outline-antenna-arm-right 0.5s linear;
   animation-fill-mode: forwards;
-  animation-delay: 32.5s;
+  animation-delay: 19s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -788,9 +1451,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 68.46417236328125;
   stroke-dashoffset: 68.46417236328125;
-  animation: outline-button-01-outer 1s linear;
+  animation: outline-button-01-outer 0.5s linear;
   animation-fill-mode: forwards;
-  animation-delay: 33.5s;
+  animation-delay: 19.5s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -813,9 +1476,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 68.46417236328125;
   stroke-dashoffset: 68.46417236328125;
-  animation: outline-button-02-outer 1s linear;
+  animation: outline-button-02-outer 0.5s linear;
   animation-fill-mode: forwards;
-  animation-delay: 34.5s;
+  animation-delay: 20s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -838,9 +1501,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 68.47029113769531;
   stroke-dashoffset: 68.47029113769531;
-  animation: outline-button-03-outer 1s linear;
+  animation: outline-button-03-outer 0.5s linear;
   animation-fill-mode: forwards;
-  animation-delay: 35.5s;
+  animation-delay: 20.5s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -863,9 +1526,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 51.150238037109375;
   stroke-dashoffset: 51.150238037109375;
-  animation: outline-button-01-inner 1s linear;
+  animation: outline-button-01-inner 0.5s linear;
   animation-fill-mode: forwards;
-  animation-delay: 36.5s;
+  animation-delay: 21s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -888,9 +1551,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 51.193023681640625;
   stroke-dashoffset: 51.193023681640625;
-  animation: outline-button-02-inner 1s linear;
+  animation: outline-button-02-inner 0.5s linear;
   animation-fill-mode: forwards;
-  animation-delay: 37.5s;
+  animation-delay: 21.5s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -913,9 +1576,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 52.39299392700195;
   stroke-dashoffset: 52.39299392700195;
-  animation: outline-button-03-inner 1s linear;
+  animation: outline-button-03-inner 0.5s linear;
   animation-fill-mode: forwards;
-  animation-delay: 38.5s;
+  animation-delay: 22s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -938,9 +1601,9 @@
   stroke-miterlimit: 10;
   stroke-dasharray: 1208.621337890625;
   stroke-dashoffset: 1208.621337890625;
-  animation: star-outline 5s linear;
+  animation: star-outline 3s linear;
   animation-fill-mode: forwards;
-  animation-delay: 39.5s;
+  animation-delay: 22.5s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -999,7 +1662,7 @@
 .star-shape {
   animation: blip-complete 3s linear;
   animation-fill-mode: both;
-  animation-delay: 45.5s;
+  animation-delay: 26.5s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -1017,7 +1680,7 @@
 .outlines {
   animation: blip-outlines-complete 3s linear;
   animation-fill-mode: forwards;
-  animation-delay: 46.5s;
+  animation-delay: 27.5s;
   /*animation-iteration-count: 1;*/
   animation-iteration-count: 1;
   animation-play-state: running;
@@ -1064,7 +1727,7 @@
   width: 60px;
   animation: fadeFont 8s forwards ease-out;
   animation-iteration-count: 1;
-  animation-delay: 9s;
+  animation-delay: 6s;
   animation-fill-mode: both;
 }
 
@@ -1086,7 +1749,7 @@
   }
   23% {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1);
     fill: rgba(250, 250, 250, 1);
   }
   24% {
@@ -1094,24 +1757,14 @@
     transform: scale(1);
     fill: rgba(250, 250, 250, 1);
   }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-    fill: rgba(250, 250, 250, 1);
-  }
-  55% {
-    opacity: 0.2;
-    transform: scale(0.6);
-    fill: rgba(250, 250, 250, 0.5);
-  }
-  80% {
+  40% {
     opacity: 0;
-    transform: scale(0.4);
+    transform: scale(0);
     fill: rgba(250, 250, 250, 0);
   }
   100% {
     opacity: 0;
-    transform: scale(0.2);
+    transform: scale(0);
     fill: rgba(250, 250, 250, 0);
   }
 }
@@ -1119,28 +1772,28 @@
 .blippy-b {
   animation: animateFont 1s forwards ease-in;
   animation-iteration-count: 1;
-  animation-delay: 7.5s;
+  animation-delay: 4.5s;
   animation-fill-mode: both;
 }
 
 .blippy-l {
   animation: animateFont 1s forwards ease-in;
   animation-iteration-count: 1;
-  animation-delay: 7.7s;
+  animation-delay: 4.7s;
   animation-fill-mode: both;
 }
 
 .blippy-i {
   animation: animateFont 1s forwards ease-in;
   animation-iteration-count: 1;
-  animation-delay: 7.9s;
+  animation-delay: 4.9s;
   animation-fill-mode: both;
 }
 
 .blippy-p {
   animation: animateFont 1s forwards ease-in;
   animation-iteration-count: 1;
-  animation-delay: 8.1s;
+  animation-delay: 5.1s;
   animation-fill-mode: both;
 }
 
@@ -1176,17 +1829,17 @@
   display: inline-block;
   position: absolute;
   left: 0px;
-  z-index: 50;
+  z-index: 1000;
   animation-name: blipLighten;
   animation-delay: var(--animationDelay);
-  animation-duration: 12s;
+  animation-duration: 6s;
   animation-iteration-count: var(--animationIteration);
   animation-fill-mode: both;
 }
 
 .blip-blue-text {
   position: absolute;
-  z-index: 50;
+  z-index: 1050;
   width: 100%;
 }
 
@@ -1195,23 +1848,23 @@
     background-color: rgb(39, 97, 151);
     height: 100%;
   }
-  63% {
+  75% {
     background-color: rgb(39, 97, 151);
     height: 100%;
   }
-  64% {
+  77.5% {
     background-color: rgb(109, 159, 206);
     height: 100%;
   }
-  65% {
+  77.8% {
     background-color: rgb(39, 97, 151);
     height: 100%;
   }
-  85% {
+  80% {
     background-color: rgb(39, 97, 151, 1);
     height: 100%;
   }
-  90% {
+  85% {
     background-color: rgb(39, 97, 151, 0);
     height: 100%;
   }
@@ -1222,71 +1875,22 @@
 }
 
 .blip-blue {
-  animation-name: blipBlueMove;
-  animation-iteration-count: var(--animationIteration);
-  animation-delay: var(--animationDelay);
-  animation-duration: var(--animationDuration);
-  animation-timing-function: cubic-bezier(var(--timingCurve));
-  animation-fill-mode: both;
-  position: relative;
-  motion-path: path(var(--motionPath));
-  offset-path: path(var(--motionPath));
-  offset-rotate: auto;
+  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 100;
-  top: -20px;
-  left: -50px;
-}
-
-@keyframes blipBlueMove {
-  0% {
-    width: 80px;
-    motion-offset: 0;
-    offset-distance: 0%;
-    transform: rotate(-12deg);
-  }
-  100% {
-    width: 180px;
-    motion-offset: 100%;
-    offset-distance: 100%;
-    transform: rotate(2deg);
-  }
 }
 
 .blue-shadow {
-  animation-name: blipBlueShadowMove;
-  animation-iteration-count: var(--animationIteration);
-  animation-delay: var(--animationDelay);
-  animation-duration: var(--animationDuration);
-  animation-timing-function: cubic-bezier(var(--timingCurve));
-  animation-fill-mode: both;
-  position: relative;
-  motion-path: path(var(--motionPath));
-  offset-path: path(var(--motionPath));
-  offset-rotate: auto;
-  fill: rgb(50, 79, 112);
-  -webkit-filter: blur(10px); /* Safari */
+  width: 150px;
+  position: absolute;
+  top: 30;
+  left: -20;
+  z-index: 50;
+  -webkit-filter: blur(10px);
   filter: blur(10px);
   z-index: 50;
-}
-
-@keyframes blipBlueShadowMove {
-  0% {
-    opacity: 1;
-    left: -120px;
-    width: 80px;
-    motion-offset: 0;
-    offset-distance: 0%;
-    transform: rotate(-10deg);
-  }
-  100% {
-    opacity: 1;
-    left: -260px;
-    top: 30px;
-    width: 180px;
-    motion-offset: 100%;
-    offset-distance: 100%;
-    transform: rotate(6deg);
-  }
 }
 
 /*

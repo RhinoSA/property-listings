@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import mammals from "../context/data/mammals";
+import "../extras/snap/blip-simple.css";
 
 const getUnique = (items, value) => {
   return [...new Set(items.map(item => item[value]))];
@@ -8,49 +10,6 @@ const capitalize = s => {
   if (typeof s !== "string") return "";
   return s.charAt(0).toUpperCase() + s.slice(1);
 };
-
-const mammals = [
-  { id: 1, title: "lion", order: "carnivora", latin: "panthera leo" },
-  { id: 2, title: "buffalo", order: "ruminantia", latin: "syncerus caffer" },
-  {
-    id: 3,
-    title: "aardvark",
-    order: "tubulidentata",
-    latin: "orycteropus afer"
-  },
-  { id: 4, title: "leopard", order: "carnivora", latin: "panthera pardus" },
-  {
-    id: 5,
-    title: "white rhino",
-    order: "perissodactyla",
-    latin: "ceratotherium simum"
-  },
-  { id: 6, title: "pangolin", order: "pholidota", latin: "manis temminckii" },
-  {
-    id: 7,
-    title: "chacma baboon",
-    order: "primata",
-    latin: "papio cynocephalus ursinus"
-  },
-  {
-    id: 8,
-    title: "african civet",
-    order: "carnivora",
-    latin: "civettictis civetta"
-  },
-  {
-    id: 9,
-    title: "black wildebeest",
-    order: "ruminantia",
-    latin: "connochaetes gnou"
-  },
-  {
-    id: 10,
-    title: "common duiker",
-    order: "ruminantia",
-    latin: "sylvicapra grimmia"
-  }
-];
 
 const info = [
   {
@@ -98,10 +57,13 @@ const options = ordersList.map((item, index) => {
 });
 
 class SelectSwitch extends Component {
-  state = {
-    order: "Select order...",
-    orderChoice: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      order: "Select order...",
+      orderChoice: ""
+    };
+  }
 
   handleChange = event => {
     const target = event.target;

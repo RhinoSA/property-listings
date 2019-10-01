@@ -12,15 +12,33 @@ class BlipDraw extends Component {
       buttonOneClass: "blip-button-01",
       buttonTwoClass: "blip-button-02",
       buttonThreeClass: "blip-button-03",
-      antennaInfoClassLeft: "antenna-info left",
-      antennaInfoClassRight: "antenna-info right"
+      antennaInfoClassLeft: "antenna-info left hide",
+      antennaInfoClassRight: "antenna-info right hide",
+      screenHighlightClass: "screen-highlight hide"
     };
   }
 
   componentDidMount() {
     const pathLength = this.pathtest.current.getTotalLength();
     console.log("Outer:" + pathLength);
+    this.setState({
+      antennaInfoClassLeft: "antenna-info left hide",
+      antennaInfoClassRight: "antenna-info left hide",
+      screenHighlightClass: "screen-highlight hide"
+    });
   }
+
+  screenOver = () => {
+    this.setState({
+      screenHighlightClass: "screen-highlight show"
+    });
+  };
+
+  screenOut = () => {
+    this.setState({
+      screenHighlightClass: "screen-highlight hide"
+    });
+  };
 
   buttonOneClick = () => {
     if (this.state.infoPanelOneClass === "blip-info box-01 hide") {
@@ -163,6 +181,32 @@ class BlipDraw extends Component {
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
+          viewBox="0 0 371.5 276.072"
+          className={this.state.screenHighlightClass}
+          pointerEvents="none"
+        >
+          <path
+            className="screen-highlight-outer"
+            d="M26.475,181.931C10.671,173.289,0,156.87,0,138.036c0-18.838,10.675-35.261,26.486-43.901
+       l131.937-76.043C179.23,6.579,203.322,0,229,0c78.701,0,142.5,61.801,142.5,138.036S307.701,276.072,229,276.072
+       c-25.658,0-49.732-6.569-70.528-18.065L26.475,181.931z"
+          />
+          <path
+            className="screen-highlight-inner"
+            d="M371.5,138.036c0-51.137-28.707-95.777-71.361-119.629l-0.061-0.315
+       C280.207,7.097,257.337,0.618,232.954,0.055c-0.602-0.016-1.208-0.02-1.812-0.029C230.594,0.02,230.049,0,229.5,0
+       c-0.084,0-0.166,0.003-0.25,0.003C229.166,0.003,229.084,0,229,0c-0.549,0-1.094,0.02-1.642,0.026
+       c-0.604,0.009-1.209,0.013-1.812,0.029c-24.383,0.562-47.253,7.042-67.124,18.037l0.04,0.257C115.752,42.188,87,86.859,87,138.036
+       c0,51.189,28.766,95.87,71.492,119.704l-0.02,0.268c19.86,10.979,42.713,17.448,67.076,18.01c0.6,0.016,1.202,0.02,1.804,0.029
+       c0.55,0.006,1.096,0.026,1.648,0.026c0.084,0,0.166-0.003,0.25-0.003c0.084,0,0.166,0.003,0.25,0.003
+       c0.551,0,1.098-0.02,1.648-0.026c0.602-0.009,1.204-0.013,1.804-0.029c24.363-0.562,47.217-7.031,67.076-18.01l0.055-0.311
+       C342.768,233.853,371.5,189.195,371.5,138.036z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
           viewBox="0 0 254.676 290.14"
           className="blip-draw"
         >
@@ -211,6 +255,8 @@ class BlipDraw extends Component {
               />
               <path
                 className="b-screen-lighter"
+                onMouseOver={this.screenOver}
+                onMouseOut={this.screenOut}
                 d="M166.428,127.192c27.546,0,49.877,19.836,49.877,44.305c0,24.469-22.331,44.305-49.877,44.305
                c-10.269,0-19.814-2.757-27.747-7.483c-13.346-7.951-22.13-21.475-22.13-36.822C116.551,147.028,138.882,127.192,166.428,127.192z"
               />
@@ -525,7 +571,7 @@ class BlipDraw extends Component {
               {/* Button 01 */}
               <path
                 className="star-shape"
-                pointer-events="none"
+                pointerEvents="none"
                 d="M176.666,158.137l0.242,0.752l15.031,47.636
                 l-11.179-48.259l36.711,32.74l-35.313-36.486l50.332,12.299l-48.67-15.885l49.921-13.495l-49.256,10.41l32.485-35.692
                 l-35.223,33.792l10.854-46.312l-14.206,45.726l-11.897-48.386l7.527,48.167l-36.154-35.49l33.496,38.228l-49.516-12.446
@@ -630,7 +676,7 @@ class BlipDraw extends Component {
             <path
               ref={this.pathtest}
               className="star-outline"
-              pointer-events="none"
+              pointerEvents="none"
               d="M176.666,158.137l0.242,0.752l15.031,47.636
                 l-11.179-48.259l36.711,32.74l-35.313-36.486l50.332,12.299l-48.67-15.885l49.921-13.495l-49.256,10.41l32.485-35.692
                 l-35.223,33.792l10.854-46.312l-14.206,45.726l-11.897-48.386l7.527,48.167l-36.154-35.49l33.496,38.228l-49.516-12.446

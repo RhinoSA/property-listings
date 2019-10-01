@@ -1,0 +1,131 @@
+.clock-arm {
+  cursor: pointer;
+}
+
+.clock-arm-axis .outer,
+.clock-arm-outer,
+.outer-ring-black,
+.inner-disc .outer,
+.clock-one .outer,
+.clock-two .outer,
+.clock-three .outer,
+.clock-four .outer,
+.clock-five .outer,
+.clock-six .outer,
+.clock-seven .outer,
+.clock-eight .outer {
+  fill: #888;
+}
+
+.clock-one .inner,
+.clock-two .inner,
+.clock-three .inner,
+.clock-four .inner,
+.clock-five .inner,
+.clock-six .inner,
+.clock-seven .inner,
+.clock-eight .inner,
+.clock-arm-inner,
+.outer-ring-white,
+.inner-disc .inner,
+.clock-arm-axis .inner {
+  fill: #fff;
+}
+
+.clock-one,
+.clock-two,
+.clock-three,
+.clock-four,
+.clock-five,
+.clock-six,
+.clock-seven,
+.clock-eight {
+  cursor: pointer;
+}
+
+.clock-one .outer,
+.clock-two .outer,
+.clock-three .outer,
+.clock-four .outer,
+.clock-five .outer,
+.clock-six .outer,
+.clock-seven .outer,
+.clock-eight .outer {
+  -webkit-transition: r 0.5s, fill 0.5; /* Safari prior 6.1 */
+  transition: r 0.5s, fill 0.5;
+}
+
+.clock-one:hover,
+.clock-two:hover,
+.clock-three:hover,
+.clock-four:hover,
+.clock-five:hover,
+.clock-six:hover,
+.clock-seven:hover,
+.clock-eight:hover {
+  -webkit-transition: r 0.5s; /* Safari prior 6.1 */
+  transition: r 0.5s;
+}
+
+.clock-one:hover .outer,
+.clock-two:hover .outer,
+.clock-three:hover .outer,
+.clock-four:hover .outer,
+.clock-five:hover .outer,
+.clock-six:hover .outer,
+.clock-seven:hover .outer,
+.clock-eight:hover .outer {
+  r: 21;
+  fill: rgb(84, 136, 179);
+}
+
+.clock-one:hover .inner,
+.clock-two:hover .inner,
+.clock-three:hover .inner,
+.clock-four:hover .inner,
+.clock-five:hover .inner,
+.clock-six:hover .inner,
+.clock-seven:hover .inner,
+.clock-eight:hover .inner {
+  r: 16;
+}
+
+.clock-one.active .inner,
+.clock-two.active .inner,
+.clock-three.active .inner,
+.clock-four.active .inner,
+.clock-five.active .inner,
+.clock-six.active .inner,
+.clock-seven.active .inner,
+.clock-eight.active .inner {
+  fill: rgb(84, 136, 179);
+}
+
+.clock-one.active .outer,
+.clock-two.active .outer,
+.clock-three.active .outer,
+.clock-four.active .outer,
+.clock-five.active .outer,
+.clock-six.active .outer,
+.clock-seven.active .outer,
+.clock-eight.active .outer {
+  fill: rgb(47, 65, 80);
+}
+
+.directional-value {
+  width: 220px;
+  padding: 0px 0px 10px 0px;
+  margin: 0px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+.directional-wrapper {
+  padding: 15px;
+  background-color: #333;
+  border-radius: 15px;
+  width: 250px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

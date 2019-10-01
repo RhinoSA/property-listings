@@ -1,0 +1,10 @@
+.fly {
+  width: 100%;
+}
+
+.controller {
+  fill: none;
+  stroke: none;
+  stroke-width: 0.5;
+  stroke-miterlimit: 10;
+}
