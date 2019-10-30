@@ -3,8 +3,8 @@ import Navbar from "../modules/navbar/navbar";
 import Menu from "../../sections/menu";
 import FeaturedRooms from "./featuredrooms";
 import Photo from "../../images/lion.jpg";
-//import { TimelineMax, TweenMax } from "gsap/all";
-import * as TweenMax from "gsap/umd/TweenMax";
+import { TimelineMax, TweenMax } from "gsap/all";
+//import * as TweenMax from "gsap/umd/TweenMax";
 
 /* ########## BLIP ########## */
 import "../../sections/extras/svg/blip/blip.css";
